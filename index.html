@@ -9,10 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Bootstrap Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
   <style>
     html, body {
@@ -35,20 +32,21 @@
     }
 
     .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      display: none; /* Removed overlay for clearer images */
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 700px;
-      padding: 0 15px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #000;
+      border-radius: 10px;
+    }
+
+    .hero-content h1, .hero-content p {
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     }
 
     .counter {
@@ -63,6 +61,28 @@
       padding: 30px 0;
       text-align: center;
     }
+
+    /* Our Services card hover effect */
+    #our-services .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #our-services .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 123, 255, 0.5);
+      z-index: 10;
+    }
+
+    #our-services .card img {
+      transition: transform 0.3s ease;
+    }
+
+    #our-services .card:hover img {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -70,15 +90,17 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Alarabia</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav"
-              aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Alarabia Logo" height="40" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#our-services">Our Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#our-achievements">Our Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -97,15 +119,89 @@
     </div>
   </section>
 
-  <!-- About Section with Read More / Read Less -->
+  <!-- Our Services Section -->
+  <section id="our-services" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Services</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <a href="service6.html">
+              <img src="images/image6.jpg" class="card-img-top" alt="Service 6" />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Service 6</h5>
+              <p class="card-text">Brief description of Service 6.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <a href="service7.html">
+              <img src="images/image7.jpg" class="card-img-top" alt="Service 7" />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Service 7</h5>
+              <p class="card-text">Brief description of Service 7.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="images/image8.jpg" class="card-img-top" alt="Service 8" />
+            <div class="card-body">
+              <h5 class="card-title">Service 8</h5>
+              <p class="card-text">Brief description of Service 8.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="images/image9.jpg" class="card-img-top" alt="Service 9" />
+            <div class="card-body">
+              <h5 class="card-title">Service 9</h5>
+              <p class="card-text">Brief description of Service 9.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="images/image10.jpg" class="card-img-top" alt="Service 10" />
+            <div class="card-body">
+              <h5 class="card-title">Service 10</h5>
+              <p class="card-text">Brief description of Service 10.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="images/image11.jpg" class="card-img-top" alt="Service 11" />
+            <div class="card-body">
+              <h5 class="card-title">Service 11</h5>
+              <p class="card-text">Brief description of Service 11.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card shadow-sm">
+            <img src="images/image12.jpg" class="card-img-top" alt="Service 12" />
+            <div class="card-body">
+              <h5 class="card-title">Service 12</h5>
+              <p class="card-text">Brief description of Service 12.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
   <section id="about" class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-4">About Alarabia</h2>
-
       <p id="about-short">
         At Alarabia for Training and Conference Services, we take pride in over 11 years of experience in organizing and delivering professional training programs and conferences for both local and international companies and institutions...
       </p>
-
       <p id="about-full" style="display:none;">
         We have worked with numerous leading companies and diverse organizations. Each event we’ve handled has been delivered with precision and professionalism, reflecting in the results and experiences of our clients. We consistently document and evaluate our work internally to support continuous improvement and ensure service quality.<br><br>
 
@@ -124,12 +220,11 @@
 
         At Alarabia for Training and Conference Services, we don’t just organize successful events — we aim to become true success partners for our clients, providing an inspiring training environment and a smooth, integrated travel experience throughout Turkey.
       </p>
-
       <button id="toggle-btn" class="btn btn-primary mt-3">Read More</button>
     </div>
   </section>
 
-  <!-- Our Achievements Section -->
+  <!-- Achievements Section -->
   <section id="our-achievements" class="py-5 text-center bg-white">
     <div class="container">
       <h2 class="mb-4">Our Achievements</h2>
@@ -150,7 +245,7 @@
     </div>
   </section>
 
-  <!-- Contact Section with Icons -->
+  <!-- Contact Section -->
   <section id="contact" class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-5">Contact Us</h2>
@@ -219,7 +314,7 @@
     setInterval(changeBackground, 5000);
   </script>
 
-  <!-- Counter-Up Script -->
+  <!-- Counter Script -->
   <script>
     function animateCounter(counter) {
       const target = +counter.getAttribute('data-target');
@@ -254,22 +349,17 @@
     window.addEventListener('scroll', handleScroll);
   </script>
 
-  <!-- Read More / Less Toggle Script -->
+  <!-- Read More / Less Script -->
   <script>
     const toggleBtn = document.getElementById('toggle-btn');
     const shortText = document.getElementById('about-short');
     const fullText = document.getElementById('about-full');
 
     toggleBtn.addEventListener('click', () => {
-      if (fullText.style.display === 'none') {
-        fullText.style.display = 'block';
-        shortText.style.display = 'none';
-        toggleBtn.textContent = 'Read Less';
-      } else {
-        fullText.style.display = 'none';
-        shortText.style.display = 'block';
-        toggleBtn.textContent = 'Read More';
-      }
+      const isHidden = fullText.style.display === 'none';
+      fullText.style.display = isHidden ? 'block' : 'none';
+      shortText.style.display = isHidden ? 'none' : 'block';
+      toggleBtn.textContent = isHidden ? 'Read Less' : 'Read More';
     });
   </script>
 
