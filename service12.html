@@ -16,20 +16,20 @@
       height: 100%;
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000; /* black background */
+      background-color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
-      color: #eee; /* light text color globally */
+      color: #eee;
     }
 
     .container {
       display: flex;
       max-width: 1000px;
       width: 100%;
-      background: #121212; /* dark container background for contrast */
+      background: #121212;
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
       overflow: hidden;
@@ -42,7 +42,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #000; /* black behind image */
+      background-color: #000;
       padding: 10px;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
@@ -73,7 +73,7 @@
     #typed-text {
       white-space: pre-wrap;
       min-height: 180px;
-      border-left: 3px solid #0d6efd; /* bootstrap primary blue */
+      border-left: 3px solid #0d6efd;
       padding-left: 15px;
       font-weight: 500;
       color: #eee;
@@ -83,7 +83,7 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background-color: #0d6efd; /* bootstrap primary */
+      background-color: #0d6efd;
       color: white;
       padding: 14px 26px;
       border-radius: 30px;
@@ -106,6 +106,27 @@
 
     .back-home-btn i {
       font-size: 1.3rem;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+      text-decoration: none;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
     }
 
     @media (max-width: 768px) {
@@ -144,12 +165,16 @@
     <i class="bi bi-house-fill"></i> Return to Home Page
   </a>
 
+  <!-- WhatsApp Contact Button -->
+  <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-btn" aria-label="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <script>
-    const text = `Professional Training Kits for Participants At Alarabia for Training and Conference Services, we believe that great training starts with the right tools. That’s why we provide professionally prepared training kits for all participants, designed to support and enrich the learning experience. Each kit includes essential materials such as handbooks, notebooks, pens, printed resources, forms, and any additional items customized to the specific program.
+    const text = `At Alarabia for Training and Conference Services, we provide professional training kits to enhance the learning experience. Each kit includes handbooks, notebooks, pens, printed materials, and custom items tailored to the course.
 
-Our kits are tailored to reflect the identity and content of each training course, and are presented in high-quality, organized formats that add a polished, professional touch. With Alarabia, every participant is equipped to engage fully, take away real value, and enjoy a seamless, well-prepared experience from start to finish.`;
+Our kits reflect the program’s identity and are presented in an organized, high-quality manner. With Alarabia, every participant is fully equipped for a smooth, valuable training experience.`;
     const typedTextElement = document.getElementById('typed-text');
-
     let index = 0;
 
     function typeWriter() {

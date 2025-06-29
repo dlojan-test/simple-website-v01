@@ -16,20 +16,20 @@
       height: 100%;
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000; /* black background */
+      background-color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
-      color: #eee; /* light text color globally */
+      color: #eee;
     }
 
     .container {
       display: flex;
       max-width: 1000px;
       width: 100%;
-      background: #121212; /* dark container background for contrast */
+      background: #121212;
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
       overflow: hidden;
@@ -42,7 +42,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #000; /* black behind image */
+      background-color: #000;
       padding: 10px;
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
@@ -73,7 +73,7 @@
     #typed-text {
       white-space: pre-wrap;
       min-height: 180px;
-      border-left: 3px solid #0d6efd; /* bootstrap primary blue */
+      border-left: 3px solid #0d6efd;
       padding-left: 15px;
       font-weight: 500;
       color: #eee;
@@ -83,7 +83,7 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background-color: #0d6efd; /* bootstrap primary */
+      background-color: #0d6efd;
       color: white;
       padding: 14px 26px;
       border-radius: 30px;
@@ -106,6 +106,27 @@
 
     .back-home-btn i {
       font-size: 1.3rem;
+    }
+
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+      text-decoration: none;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
     }
 
     @media (max-width: 768px) {
@@ -144,14 +165,18 @@
     <i class="bi bi-house-fill"></i> Return to Home Page
   </a>
 
+  <!-- WhatsApp Contact Button -->
+  <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-btn" aria-label="Chat with us on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
   <script>
-    const text = `Airport Pick-Up and Drop-Off Services At Alarabia for Training and Conference Services, we ensure that your journey begins and ends with ease and comfort. Our professional airport transfer service provides seamless pick-up upon arrival and punctual drop-off at departure, so you never have to worry about logistics.
+    const text = `At Alarabia for Training and Conference Services, we make your journey smooth from start to finish. Our professional airport pick-up and drop-off services ensure timely, comfortable transfers to and from hotels or training venues.
 
-Our dedicated team is ready to welcome guests at the airport with courteous assistance and smooth transportation to hotels or training venues. When it's time to leave, we arrange timely transfers back to the airport, ensuring a hassle-free and stress-free experience.
+Our courteous team welcomes you at the airport and handles all logistics, so you can focus on your event without stress.
 
-With Alarabia, every guest is treated with special care from the very first moment to the final farewell.`;
+With Alarabia, enjoy a seamless, hassle-free travel experience, where every guest receives attentive care from arrival to departure.`;
     const typedTextElement = document.getElementById('typed-text');
-
     let index = 0;
 
     function typeWriter() {
