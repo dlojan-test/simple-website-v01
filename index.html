@@ -10,102 +10,8 @@
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
-    .hero {
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: background-image 1s ease-in-out;
-    }
-
-    .hero-overlay {
-      display: none; /* Removed overlay for clearer images */
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #000;
-      border-radius: 10px;
-    }
-
-    .hero-content h1, .hero-content p {
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .counter {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #007bff;
-    }
-
-    /* WhatsApp Button Styling */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 25px;
-      left: 25px;
-      background-color: #25D366;
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
-      text-decoration: none;
-      z-index: 1001;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .whatsapp-btn:hover {
-      background-color: #1ebe5d;
-    }
-
-    footer {
-      background-color: #212529;
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-
-    /* Our Services card hover effect */
-    #our-services .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    #our-services .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 20px rgba(0, 123, 255, 0.5);
-      z-index: 10;
-    }
-
-    #our-services .card img {
-      transition: transform 0.3s ease;
-    }
-
-    #our-services .card:hover img {
-      transform: scale(1.1);
-    }
-  </style>
 </head>
 <body>
 
@@ -122,8 +28,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#our-services">Our Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#our-services">Our Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#our-achievements">Our Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -133,6 +40,8 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
+    <div class="bg-slide" id="bg1"></div>
+    <div class="bg-slide" id="bg2"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="display-4">Welcome to Alarabia</h1>
@@ -140,6 +49,7 @@
       <a href="#about" class="btn btn-primary btn-lg mt-3">Explore More</a>
     </div>
   </section>
+
 
   <!-- Our Services Section -->
   <section id="our-services" class="py-5 bg-white">
@@ -321,75 +231,6 @@
   </a>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Background Slideshow -->
-  <script>
-    const hero = document.getElementById("hero");
-    const images = [
-      "images/image1.jpg",
-      "images/image2.jpg",
-      "images/image3.jpg",
-      "images/image4.jpg"
-    ];
-    let index = 0;
-
-    function changeBackground() {
-      hero.style.backgroundImage = `url('${images[index]}')`;
-      index = (index + 1) % images.length;
-    }
-
-    changeBackground();
-    setInterval(changeBackground, 5000);
-  </script>
-
-  <!-- Counter Script -->
-  <script>
-    function animateCounter(counter) {
-      const target = +counter.getAttribute('data-target');
-      const increment = target / 200;
-      let current = 0;
-
-      function update() {
-        current += increment;
-        if (current < target) {
-          counter.innerText = Math.ceil(current);
-          requestAnimationFrame(update);
-        } else {
-          counter.innerText = target;
-        }
-      }
-
-      update();
-    }
-
-    function handleScroll() {
-      const counters = document.querySelectorAll('.counter');
-      const section = document.getElementById('our-achievements');
-      const sectionTop = section.getBoundingClientRect().top;
-      const screenHeight = window.innerHeight;
-
-      if (sectionTop < screenHeight - 100 && !section.classList.contains('started')) {
-        section.classList.add('started');
-        counters.forEach(counter => animateCounter(counter));
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-  </script>
-
-  <!-- Read More / Less Script -->
-  <script>
-    const toggleBtn = document.getElementById('toggle-btn');
-    const shortText = document.getElementById('about-short');
-    const fullText = document.getElementById('about-full');
-
-    toggleBtn.addEventListener('click', () => {
-      const isHidden = fullText.style.display === 'none';
-      fullText.style.display = isHidden ? 'block' : 'none';
-      shortText.style.display = isHidden ? 'none' : 'block';
-      toggleBtn.textContent = isHidden ? 'Read Less' : 'Read More';
-    });
-  </script>
-
+  <script src="main.js"></script>
 </body>
 </html>

@@ -1,0 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1;
+}
+
+.bg-slide.visible {
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-overlay {
+  display: none; /* أزلنا التراكب للخلفيات لتظهر الصور بوضوح */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3; /* فوق الخلفيات */
+  max-width: 700px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border-radius: 10px;
+}
+
+.hero-content h1, .hero-content p {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.counter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  background-color: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Our Services card hover effect */
+#our-services .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#our-services .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 123, 255, 0.5);
+  z-index: 10;
+}
+
+#our-services .card img {
+  transition: transform 0.3s ease;
+}
+
+#our-services .card:hover img {
+  transform: scale(1.1);
+}
