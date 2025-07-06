@@ -2,8 +2,7 @@
 const images = [
   "images/image1.jpg",
   "images/image2.jpg",
-  "images/image3.jpg",
-  "images/image4.jpg"
+  "images/image3.jpg"
 ];
 
 const bg1 = document.getElementById('bg1');
@@ -12,29 +11,53 @@ const bg2 = document.getElementById('bg2');
 let currentIndex = 0;
 let visibleBg = bg1;
 
-function changeBackground() {
-  const nextIndex = (currentIndex + 1) % images.length;
-  const hiddenBg = (visibleBg === bg1) ? bg2 : bg1;
+// 🔘 إنشاء النقاط داخل .hero-nav
+const heroNav = document.querySelector('.hero-nav');
+images.forEach((_, index) => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  dot.dataset.bg = index;
+  if (index === 0) dot.classList.add('active');
+  heroNav.appendChild(dot);
+});
 
-  // حط الصورة القادمة في العنصر المخفي
-  hiddenBg.style.backgroundImage = `url('${images[nextIndex]}')`;
+const dots = document.querySelectorAll('.dot');
 
-  // خلي العنصر المخفي يظهر تدريجياً
-  hiddenBg.classList.add('visible');
-  // خفي العنصر الحالي تدريجياً
-  visibleBg.classList.remove('visible');
-
-  // حدث المرجع للعنصر الظاهر والاندكس
-  visibleBg = hiddenBg;
-  currentIndex = nextIndex;
+function updateDots(index) {
+  dots.forEach(dot => dot.classList.remove('active'));
+  if (dots[index]) dots[index].classList.add('active');
 }
 
-// نبدأ بالصورة الأولى
+function showBackground(index) {
+  const hiddenBg = (visibleBg === bg1) ? bg2 : bg1;
+  hiddenBg.style.backgroundImage = `url('${images[index]}')`;
+  hiddenBg.classList.add('visible');
+  visibleBg.classList.remove('visible');
+  visibleBg = hiddenBg;
+  currentIndex = index;
+  updateDots(index);
+}
+
+function changeBackground() {
+  const nextIndex = (currentIndex + 1) % images.length;
+  showBackground(nextIndex);
+}
+
+// ✅ بدء الخلفية الأولى
 bg1.style.backgroundImage = `url('${images[0]}')`;
 bg1.classList.add('visible');
 
-// تغيير الخلفية كل 5 ثواني
-setInterval(changeBackground, 5000);
+// 🔁 تشغيل تلقائي
+let autoSlide = setInterval(changeBackground, 5000);
+
+// ▶️ عند النقر على نقطة: تغيير الخلفية يدويًا
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    clearInterval(autoSlide);       // أوقف التلقائي مؤقتًا
+    showBackground(index);
+    autoSlide = setInterval(changeBackground, 5000); // أعد تشغيله
+  });
+});
 
 // تحريك الأرقام في قسم الإنجازات
 function animateCounter(counter) {
