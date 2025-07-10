@@ -1,6 +1,6 @@
 // صور الخلفية المتغيرة
 const images = [
-  "images/image1.jpg",
+  "images/image1.jpeg",
   "images/image2.jpg",
   "images/image3.jpg"
 ];
@@ -71,7 +71,7 @@ function animateCounter(counter) {
       counter.innerText = Math.ceil(current);
       requestAnimationFrame(update);
     } else {
-      counter.innerText = target;
+      counter.innerText = counter.classList.contains('percent') ? `${target}%` : target;
     }
   }
 
