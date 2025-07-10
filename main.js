@@ -1,9 +1,18 @@
 // صور الخلفية المتغيرة
-const images = [
-  "images/image1.jpeg",
-  "images/image2.jpg",
-  "images/image3.jpg"
-];
+const isMobile = window.innerWidth <= 768;
+
+const images = isMobile
+  ? [
+      "images/mobile-image1.jpg",
+      "images/mobile-image2.jpg",
+      "images/mobile-image3.jpg"
+    ]
+  : [
+      "images/image1.jpeg",
+      "images/image2.jpg",
+      "images/image3.jpg"
+    ];
+
 
 const bg1 = document.getElementById('bg1');
 const bg2 = document.getElementById('bg2');
