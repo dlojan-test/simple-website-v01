@@ -3,9 +3,9 @@ const isMobile = window.innerWidth <= 768;
 
 const images = isMobile
   ? [
-      "images/mobile-image1.jpg",
-      "images/mobile-image2.jpg",
-      "images/mobile-image3.jpg"
+      "images/mobile-image1.jpeg",
+      "images/mobile-image2.jpeg",
+      "images/mobile-image3.jpeg"
     ]
   : [
       "images/image1.jpeg",
