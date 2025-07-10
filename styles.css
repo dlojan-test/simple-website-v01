@@ -150,3 +150,14 @@ footer {
 .navbar {
   background-color: #000 !important; /* ← أسود واضح */
 }
+@media (max-width: 768px) {
+  .bg-slide {
+    background-size: contain;
+  }
+}
+
+@media (min-width: 769px) {
+  .bg-slide {
+    background-size: cover;
+  }
+}
