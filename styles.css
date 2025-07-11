@@ -148,11 +148,7 @@ footer {
 }
 
 .navbar {
-  background-color: transparent !important;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  background-color: #000 !important; /* ← أسود واضح */
 }
 @media (max-width: 768px) {
   .bg-slide {
