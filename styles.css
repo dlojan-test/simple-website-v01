@@ -15,7 +15,6 @@ html, body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 50px;
 }
 
 .bg-slide {
@@ -156,5 +155,11 @@ footer {
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero {
+    margin-top: 50px;
   }
 }
