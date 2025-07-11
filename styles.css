@@ -152,7 +152,7 @@ footer {
 }
 @media (max-width: 768px) {
   .bg-slide {
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
