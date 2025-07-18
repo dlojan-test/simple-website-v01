@@ -44,7 +44,8 @@ html, body {
   z-index: 3; /* فوق الخلفيات */
   max-width: 700px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+
+  background-color: rgba(255, 165, 0, 0.2);
   color: #000;
   border-radius: 10px;
 }
