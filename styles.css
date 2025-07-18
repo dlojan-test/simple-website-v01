@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #007bff; /* 💙 High blue */
+  background-color: #33224f; /* 💙 High blue */
   color: #fff;               /* Optional: sets default text to white for contrast */
 }
 
@@ -179,4 +179,8 @@ footer {
   font-size: 1.5rem;
   font-weight: 400;
   color: #003366;
+}
+.bg-blue-section {
+  background-color: #33224f; /* أزرق عالي */
+  color: white;
 }
