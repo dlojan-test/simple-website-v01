@@ -44,7 +44,7 @@ html, body {
   z-index: 3; /* فوق الخلفيات */
   max-width: 700px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #000;
   border-radius: 10px;
 }
@@ -162,4 +162,18 @@ footer {
   .hero {
     margin-top: 50px;
   }
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif; /* Elegant font */
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #001f3f;
+}
+
+.hero-content p.lead {
+  font-family: 'Roboto', sans-serif;     /* Clean and modern */
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #003366;
 }
