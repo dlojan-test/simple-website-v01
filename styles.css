@@ -245,7 +245,7 @@ footer {
   font-weight: 700;                         /* ← Fett = Bold */
   color: #444;
   text-align: center;
-  margin-top: 50px;                         /* ← تقارب أفضل للنصين */
+  margin-top: -10px;                         /* ← تقارب أفضل للنصين */
   transform: translateY(-20px);             /* ← رفع النص بشكل أنيق */
 }
 #bg1,
@@ -319,8 +319,24 @@ footer {
   padding: 10px;
   line-height: 1.4;
 }
-.special-text {
-  margin-top: -34px;
-  transform: translateY(-10px);
+
+.service-name {
+  transform: translateY(40px);
+}
+
+.email {
+  transform: translateY(80px);
+}
+.web {
+  transform: translateY(55px);
+}
+
+.logo-below {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 400;
+  color: #33224f;
   text-align: center;
+  margin-top: 8px;
+  transform: translateY(0);
 }
