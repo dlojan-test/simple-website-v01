@@ -3,14 +3,14 @@ const isMobile = window.innerWidth <= 768;
 
 const images = isMobile
   ? [
-      "images/mobile-image1.jpeg",
-      "images/mobile-image2.jpeg",
-      "images/mobile-image3.jpeg"
+      "images/Airport_transfer_bg_mobil.jpg",
+      "images/Training_rooms_bg_mobil.jpg",
+      "images/Business_bag_bg_mobil.jpg"
     ]
   : [
-      "images/image1.jpeg",
-      "images/image2.jpg",
-      "images/image3.jpg"
+      "images/Airport_transfer_bg.jpg",
+      "images/Training_rooms_bg.jpg",
+      "images/Business_bag_bg.jpg"
     ];
 
 
