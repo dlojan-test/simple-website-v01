@@ -1,125 +1,98 @@
-// صور الخلفية المتغيرة
-const isMobile = window.innerWidth <= 768;
+window.onload = function () {
+  // 🔁 تدوير الصور الخلفية تلقائيًا
 
-const images = isMobile
-  ? [
-      "images/Airport_transfer_bg_mobil.jpg",
-      "images/Training_rooms_bg_mobil.jpg",
-      "images/Business_bag_bg_mobil.jpg"
-    ]
-  : [
-      "images/Airport_transfer_bg.jpg",
-      "images/Training_rooms_bg.jpg",
-      "images/Business_bag_bg.jpg"
-    ];
+  const images = [
+    'images/Airport_transfer_bg.jpg',
+    'images/Business_bag_bg.jpg',
+    'images/Training_rooms_bg.jpg'
+  ];
 
+  let current = 0; // المؤشر الحالي للصورة
+  let next = 1;    // المؤشر التالي للصورة
 
-const bg1 = document.getElementById('bg1');
-const bg2 = document.getElementById('bg2');
+  // الحصول على عناصر الخلفية
+  let bg1 = document.getElementById('bg1');
+  let bg2 = document.getElementById('bg2');
 
-let currentIndex = 0;
-let visibleBg = bg1;
+  // تحميل أول صورة في العنصر الأول
+  bg1.style.backgroundImage = `url('${images[current]}')`;
+  bg1.classList.add('visible');
 
-// 🔘 إنشاء النقاط داخل .hero-nav
-const heroNav = document.querySelector('.hero-nav');
-images.forEach((_, index) => {
-  const dot = document.createElement('span');
-  dot.classList.add('dot');
-  dot.dataset.bg = index;
-  if (index === 0) dot.classList.add('active');
-  heroNav.appendChild(dot);
-});
+  // تغيير الصورة كل 3 ثوانٍ
+  setInterval(() => {
+    const nextImage = images[next];
 
-const dots = document.querySelectorAll('.dot');
+    // تحميل الصورة التالية في العنصر الثاني
+    bg2.style.backgroundImage = `url('${nextImage}')`;
+    bg2.classList.add('visible');
 
-function updateDots(index) {
-  dots.forEach(dot => dot.classList.remove('active'));
-  if (dots[index]) dots[index].classList.add('active');
-}
+    // بعد التلاشي، إخفاء العنصر الأول
+    setTimeout(() => {
+      bg1.classList.remove('visible');
 
-function showBackground(index) {
-  const hiddenBg = (visibleBg === bg1) ? bg2 : bg1;
-  hiddenBg.style.backgroundImage = `url('${images[index]}')`;
-  hiddenBg.classList.add('visible');
-  visibleBg.classList.remove('visible');
-  visibleBg = hiddenBg;
-  currentIndex = index;
-  updateDots(index);
-}
+      // تبادل الأدوار بين العنصرين
+      const temp = bg1;
+      bg1 = bg2;
+      bg2 = temp;
+    }, 1000); // مدة التلاشي (1 ثانية)
 
-function changeBackground() {
-  const nextIndex = (currentIndex + 1) % images.length;
-  showBackground(nextIndex);
-}
+    // تحديث المؤشرات
+    current = next;
+    next = (next + 1) % images.length;
+  }, 3000); // مدة التبديل (3 ثوانٍ)
 
-// ✅ بدء الخلفية الأولى
-bg1.style.backgroundImage = `url('${images[0]}')`;
-bg1.classList.add('visible');
+  // 📖 زر "اقرأ المزيد / اقرأ أقل" لقسم "عن العربية"
 
-// 🔁 تشغيل تلقائي
-let autoSlide = setInterval(changeBackground, 5000);
+  const toggleBtn = document.getElementById("toggle-button"); // الزر
+  const fullText = document.getElementById("about-full");     // النص الكامل
+  const shortText = document.getElementById("about-short");   // النص المختصر
 
-// ▶️ عند النقر على نقطة: تغيير الخلفية يدويًا
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    clearInterval(autoSlide);       // أوقف التلقائي مؤقتًا
-    showBackground(index);
-    autoSlide = setInterval(changeBackground, 5000); // أعد تشغيله
-  });
-});
-
-// تحريك الأرقام في قسم الإنجازات
-function animateCounter(counter) {
-  const target = +counter.getAttribute('data-target');
-  const increment = target / 200;
-  let current = 0;
-
-  function update() {
-    current += increment;
-    if (current < target) {
-      counter.innerText = Math.ceil(current);
-      requestAnimationFrame(update);
-    } else {
-      counter.innerText = counter.classList.contains('percent') ? `${target}%` : target;
-    }
+  // التأكد من وجود العناصر قبل تنفيذ الكود
+  if (toggleBtn && fullText && shortText) {
+    toggleBtn.addEventListener("click", () => {
+      // إذا كان النص الكامل مخفيًا، أظهره وأخفِ المختصر
+      if (fullText.style.display === "none") {
+        fullText.style.display = "block";
+        shortText.style.display = "none";
+        toggleBtn.textContent = "Read Less"; // تغيير نص الزر
+      } else {
+        // إذا كان النص الكامل ظاهرًا، أخفِه وأظهر المختصر
+        fullText.style.display = "none";
+        shortText.style.display = "block";
+        toggleBtn.textContent = "Read More"; // تغيير نص الزر
+      }
+    });
   }
 
-  update();
-}
+  // 🏆 عداد الإنجازات (بحركة متوازنة حسب حجم الرقم)
 
-function handleScroll() {
-  const counters = document.querySelectorAll('.counter');
-  const section = document.getElementById('our-achievements');
-  const sectionTop = section.getBoundingClientRect().top;
-  const screenHeight = window.innerHeight;
+  const counters = document.querySelectorAll('.counter'); // جميع عناصر العداد
 
-  if (sectionTop < screenHeight - 100 && !section.classList.contains('started')) {
-    section.classList.add('started');
-    counters.forEach(counter => animateCounter(counter));
-  }
-}
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target'); // الرقم النهائي
+    const isPercent = counter.classList.contains('percent'); // هل هو نسبة مئوية؟
 
-window.addEventListener('scroll', handleScroll);
+    let current = 0;
+    const duration = 2000; // مدة العد كاملة (2 ثانية)
+    const interval = 20;   // مدة كل تحديث (20 مللي ثانية)
+    const steps = duration / interval; // عدد التحديثات
+    const increment = target / steps;  // مقدار الزيادة في كل تحديث
 
-// زر "اقرأ المزيد" / "اقرأ أقل"
-const toggleBtn = document.getElementById('toggle-btn');
-const shortText = document.getElementById('about-short');
-const fullText = document.getElementById('about-full');
+    // دالة التحديث التدريجي
+    const updateCount = () => {
+      current += increment;
 
-toggleBtn.addEventListener('click', () => {
-  const isHidden = fullText.style.display === 'none';
-  fullText.style.display = isHidden ? 'block' : 'none';
-  shortText.style.display = isHidden ? 'none' : 'block';
-  toggleBtn.textContent = isHidden ? 'اقرأ أقل' : 'اقرأ المزيد';
-});
+      if (current < target) {
+        const displayValue = Math.floor(current);
+        counter.innerText = isPercent ? `${displayValue}%` : displayValue;
+        setTimeout(updateCount, interval);
+      } else {
+        // تأكيد الوصول للرقم النهائي
+        counter.innerText = isPercent ? `${target}%` : target;
+      }
+    };
 
-const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-const navbarCollapse = document.querySelector('.navbar-collapse');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (navbarCollapse.classList.contains('show')) {
-      new bootstrap.Collapse(navbarCollapse).hide();
-    }
+    // بدء العد لكل عنصر
+    updateCount();
   });
-});
+};

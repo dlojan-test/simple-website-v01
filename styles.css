@@ -1,342 +1,290 @@
-html, body {
-  margin: 0;
-  padding: 0;
+/* شعار النافبار */
+.navbar-brand img {
+  max-height: 40px; /* حجم شعار النافبار */
+}
+
+/* روابط النافبار */
+.nav-link {
+  font-weight: 500; /* سمك خط روابط النافبار */
+  transition: color 0.3s ease; /* تأثير تغيير اللون عند المرور على الرابط */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffc107 !important; /* لون أصفر مميز للرابط النشط وعند المرور */
+}
+
+/* ظل النافبار */
+.navbar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* ظل خفيف للنافبار */
+}
+
+/* خلفية ملء الشاشة */
+.background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /* 💙 High blue */
-  color: #33224f;                /* Optional: sets default text to white for contrast */
-}
-.bg-blue-section {
-  background-color: #ffffff; /* أبيض */
-  color: #33224f;            /* ← لون النص يصبح بنفس اللون السابق */
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.bg-slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 1;
-}
-
-.bg-slide.visible {
-  opacity: 1;
-  z-index: 2;
-}
-
-.hero-overlay {
-  display: none; /* أزلنا التراكب للخلفيات لتظهر الصور بوضوح */
-}
-
-.hero-content {
-  position: relative;
-  margin-top: 160px; /* ← عدّل القيمة كما تحب */
-  z-index: 3; /* فوق الخلفيات */
-  max-width: 700px;
-  padding: 20px;
-
-  background-color: rgba(255, 255, 255, 0.4);
-  color: #000;
-  border-radius: 10px;
-}
-
-.hero-content h1, .hero-content p {
-  color: rgba(0, 0, 0, 0.5); /* ← أسود مع شفافية 50% */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-}
-
-.counter {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #007bff;
-}
-
-/* WhatsApp Button Styling */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 25px;
-  left: 25px;
-  background-color: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-  z-index: 1001;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1ebe5d;
-}
-
-footer {
-  background-color: #000;
-  color: white;
-  padding: 30px 0;
-  text-align: center;
-}
-
-/* Our Services card hover effect */
-#our-services .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border-radius: 10px;
+  z-index: -1; /* خلف المحتوى */
   overflow: hidden;
 }
 
-#our-services .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 20px rgba(0, 123, 255, 0.5);
-  z-index: 10;
-}
-
-#our-services .card img {
-  transition: transform 0.3s ease;
-}
-
-#our-services .card:hover img {
-  transform: scale(1.1);
-}
-.hero-content .btn {
-  background-color: rgba(0, 123, 255, 0.3) !important;
-  color: rgba(255, 255, 255, 0.85);
-  border: none;
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.hero-content .btn:hover {
-  background-color: rgba(0, 123, 255, 0.8) !important;
-}
-.hero-nav {
-  position: absolute;       /* تجعلها أسفل القسم فقط */
-  bottom: 0.1px;             /* المسافة من الأسفل */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-  display: flex;
-  gap: 10px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active,
-.dot:hover {
-  background-color: rgba(0, 123, 255, 0.9);
-}
-
-.navbar {
-  background-color: #000 !important; /* ← أسود واضح */
-}
-@media (max-width: 768px) {
-  .bg-slide {
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (min-width: 769px) {
-  .hero {
-    margin-top: 50px;
-  }
-}
-
-.hero-content h1 {
-  font-family: 'Playfair Display', serif; /* Elegant font */
-  font-size: 2.0rem;
-  font-weight: 700;
-  color: #001f3f;
-}
-
-.hero-content p.lead {
-  font-family: 'Roboto', sans-serif;     /* Clean and modern */
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #003366;
-}
-.bg-blue-section {
-  background-color: #ffffff; /* أبيض */
-  color: #33224f;            /* ← لون النص يصبح بنفس اللون السابق */
-}
-
-.image-wrapper {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease; /* حركة سلسة عند التمرير */
-}
-
-.image-wrapper:hover {
-  transform: scale(1.05); /* ← تكبير الحاوية كاملة (الصورة واللوحة معًا) */
-}
-
-/* الشعار */
-.logo-overlay {
-  position: absolute;
-  top: -23px;
-  right: 10px;
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-  z-index: 2;
-  transition: transform 0.3s ease;
-}
-
-/* اللوحة بطول الصورة وتكبر معها */
-.logo-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 45%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border-radius: 0 0 0 8px;
-  z-index: 1;
-  transition: transform 0.3s ease;
-}
-
-/* النص داخل اللوحة */
-.panel-text {
-  font-family: 'Montserrat', sans-serif;   /* ← خط عصري */
-  font-weight: 700;                         /* ← Fett = Bold */
-  font-size: 0.88rem;
-  color: #222;
-  text-align: center;
-  padding: 10px;
-  line-height: 1.4;
-}
-.panel-subtext {
-  font-family: 'Montserrat', sans-serif;   /* خط عصري */
-  font-size: 0.6rem;                        /* ← أكبر من 0.45rem ليكون أكثر وضوحًا */
-  font-weight: 700;                         /* ← Fett = Bold */
-  color: #444;
-  text-align: center;
-  margin-top: -10px;                         /* ← تقارب أفضل للنصين */
-  transform: translateY(-20px);             /* ← رفع النص بشكل أنيق */
-}
-#bg1,
-#bg2 {
+/* طبقة شفافة فوق الخلفية لتحسين وضوح النص */
+.background-slideshow::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* شفافية خفيفة */
+  z-index: 1;
+}
+
+/* عناصر الصور المتداخلة */
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
   z-index: 0;
 }
 
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 10px;
-    margin-top: 100px;
-    max-width: 90%;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.6rem; /* تصغير العنوان Welcome */
-  }
-
-  .hero-content p.lead {
-    font-size: 1.1rem; /* تصغير النص Your Trusted Partner */
-  }
-
-  .hero-content .btn {
-    padding: 8px 16px;
-    font-size: 1rem;
-  }
+/* الصورة الظاهرة */
+.bg-image.visible {
+  opacity: 1;
 }
-@media screen and (max-width: 768px) {
-  .logo-overlay {
-    width: 100px;     /* تصغير الشعار للموبايل */
-    top: -30px;
-    right: 10px;
-  }
 
-  .panel-text {
-    font-size: 0.7rem;
-  }
-
-  .panel-subtext {
-    font-size: 0.5rem;
-    transform: translateY(-10px);
-  }
+/* عنوان قسم خدماتنا */
+#our-services h2 {
+  font-weight: bold;
+  color: #333;
 }
-/* النص داخل اللوحة */
-.panel-subtext-2 {
-  font-family: 'Montserrat', sans-serif;   /* ← خط عصري */
-  font-weight: 700;                         /* ← Fett = Bold */
-  font-size: 0.35rem;
-  color: #222;
+
+/* تأثير الصور عند المرور */
+#our-services img {
+  transition: transform 0.3s ease;
+}
+
+#our-services img:hover {
+  transform: scale(1.05); /* تكبير بسيط عند المرور */
+}
+
+/* حاوية الصورة والخدمة */
+.service-card {
+  position: relative;
+  overflow: hidden; /* إخفاء أي عناصر خارج الإطار */
+}
+
+/* لوحة الشعار */
+.logo-panel {
+  position: absolute; /* فوق الصورة */
+  top: 0;
+  right: 0;
+  width: 45%; /* عرض اللوحة */
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); /* خلفية شفافة للشعار */
+  display: flex;
+  justify-content: center; /* توسيط الشعار أفقيًا */
+  align-items: flex-start; /* الشعار في الأعلى */
+  padding-top: 2px; /* مسافة من الأعلى */
+}
+
+/* الشعار داخل لوحة الشعار */
+.overlay-logo {
+  max-width: 100px;
+  height: auto;
+}
+
+/* لوحة النص */
+.text-panel {
+  position: absolute; /* فوق الصورة */
+  top: 0;
+  right: 0;
+  width: 45%; /* نفس عرض لوحة الشعار */
+  height: 100%;
+  background: transparent; /* ← بدون لون إطلاقًا */
+  display: flex;
+  justify-content: center; /* توسيط النص أفقيًا */
+  align-items: center; /* توسيط النص عموديًا */
   text-align: center;
+}
+
+/* النص داخل لوحة النص */
+.text-panel p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+/* Bottom text panel */
+.bottom-panel {
+  position: absolute; /* Position over the image */
+  bottom: 0;
+  right: 0;
+  width: 45%; /* Same width as other panels */
+  height: 100%; /* Suitable height for bottom text */
+  background: transparent; /* ← بدون لون إطلاقًا */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: flex-end; /* Align text to bottom */
   padding: 10px;
-  line-height: 1.4;
-}
-/* النص داخل اللوحة */
-.panel-subtext-3 {
-  font-family: 'Montserrat', sans-serif;   /* ← خط عصري */
-  font-weight: 700;                         /* ← Fett = Bold */
-  font-size: 0.35rem;
-  color: #222;
   text-align: center;
+}
+
+/* Text inside bottom panel */
+.bottom-panel p {
+  font-size: 0.6rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+}
+
+/* لوحة النص الإضافية */
+.extra-panel {
+  position: absolute; /* Position over the image */
+  top: 0;
+  right: 0;
+  width: 45%; /* Same width as other panels */
+  height: 100%; /* Full height like bottom panel */
+  background: transparent;
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: flex-start; /* Align text to top */
   padding: 10px;
-  line-height: 1.4;
-}
-
-.service-name {
-  transform: translateY(40px);
-}
-
-.email {
-  transform: translateY(80px);
-}
-.web {
-  transform: translateY(55px);
-}
-
-.logo-below {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.5rem;
-  font-weight: 400;
-  color: #33224f;
   text-align: center;
-  margin-top: 8px;
-  transform: translateY(0);
+  padding-top: 47px;
+}
+
+/* النص داخل اللوحة الإضافية */
+.extra-panel p {
+  font-size: 0.6rem;
+  font-weight: normal;
+  color: black;
+  margin: 0;
+}
+
+/* Style for the list inside the full text */
+#about-alarabia ul {
+  padding-left: 1.2rem; /* Indent list */
+  margin-bottom: 1rem;  /* Space below list */
+}
+
+/* Style for each list item */
+#about-alarabia li {
+  margin-bottom: 0.5rem; /* Space between items */
+}
+
+
+/* 🎨 تأثير رمادي على شعارات الشركاء */
+.grayscale {
+  filter: grayscale(100%);         /* تحويل الصورة إلى رمادية بالكامل */
+  transition: filter 0.3s ease;    /* تفعيل انتقال سلس عند التغيير */
+}
+
+/* 🎯 عند تمرير الماوس على الشعار */
+.grayscale:hover {
+  filter: grayscale(0%);           /* إزالة التأثير الرمادي وإظهار الألوان */
+}
+
+/* 🧱 تنسيق عام لقسم الشركاء */
+#partners {
+  background-color: #f8f9fa;       /* خلفية فاتحة للقسم */
+  padding-top: 3rem;               /* مسافة علوية */
+  padding-bottom: 3rem;            /* مسافة سفلية */
+}
+
+/* 🖼️ تنسيق الصور داخل القسم */
+#partners img {
+  max-width: 100%;                 /* جعل الصورة تستجيب لحجم العمود */
+  height: auto;                    /* الحفاظ على نسبة الأبعاد */
+  display: inline-block;           /* عرض الصورة بشكل طبيعي داخل النص */
+}
+
+/* 📱 تحسين العرض في الشاشات الصغيرة */
+@media (max-width: 767px) {
+  #partners .col-12 {
+    text-align: center;            /* توسيط الصور في الجوال */
+    margin-bottom: 1rem;           /* مسافة بين الشعارات */
+  }
+}
+
+/* 🧱 تنسيق الصناديق داخل قسم التواصل */
+/* ✅ تنسيق القسم العام */
+#contact {
+  font-family: 'Arial', sans-serif; /* استخدام خط بسيط وواضح */
+}
+
+/* ✅ تنسيق الشريط العلوي */
+#contact .bg-primary {
+  background-color: #002147 !important; /* لون أزرق داكن */
+}
+
+#contact .text-white {
+  color: #fff !important; /* لون النص أبيض */
+}
+
+#contact h2 {
+  font-size: 24px;         /* حجم الخط */
+  font-weight: bold;       /* جعل النص عريض */
+  letter-spacing: 1px;     /* تباعد بين الحروف */
+}
+
+/* ✅ تنسيق صناديق التواصل */
+.contact-box {
+  background-color: #fff;           /* خلفية بيضاء للصندوق */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ظل خفيف للصندوق */
+  transition: transform 0.3s ease;  /* حركة ناعمة عند التحويم */
+}
+
+/* ✅ تأثير التحويم على الصندوق */
+.contact-box:hover {
+  transform: translateY(-5px);      /* رفع الصندوق قليلاً عند التحويم */
+}
+
+/* ✅ تنسيق الأيقونات داخل الصناديق */
+.icon {
+  font-size: 32px;                  /* حجم الأيقونة */
+  color: #002147;                   /* لون أزرق داكن */
+  display: block;                   /* عرض الأيقونة كسطر مستقل */
+}
+
+/* ✅ تنسيق العناوين داخل الصناديق */
+.contact-box h5 {
+  color: #002147;                   /* لون العنوان */
+  font-weight: bold;               /* جعل العنوان عريض */
+  margin-bottom: 10px;              /* مسافة أسفل العنوان */
+}
+
+/* ✅ تنسيق النص داخل الصناديق */
+.contact-box p {
+  color: #002147;                   /* لون النص */
+  font-size: 14px;                  /* حجم الخط */
+  line-height: 1.6;                 /* ارتفاع السطر لتحسين القراءة */
+  margin: 0;                        /* إزالة الهوامش */
+}
+
+/* ✅ تنسيق الحدود بين العناصر */
+.border-end {
+  border-right: 1px solid #ccc !important; /* خط يميني رمادي */
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ccc !important; /* خط سفلي رمادي */
+}
+
+/* ✅ استجابة للجوال: إزالة الحدود الجانبية */
+@media (max-width: 767px) {
+  .border-end {
+    border-right: none !important; /* إزالة الخط في الجوال */
+  }
+}
+/* ✅ تنسيق خريطة جوجل داخل صندوق الموقع */
+.map-container iframe {
+  border-radius: 8px;         /* زوايا ناعمة للخريطة */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ظل خفيف */
 }
