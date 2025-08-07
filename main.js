@@ -18,7 +18,13 @@ window.onload = function () {
   bg1.style.backgroundImage = `url('${images[current]}')`;
   bg1.classList.add('visible');
 
-  // تغيير الصورة كل 3 ثوانٍ
+  // ✅ الحصول على النقاط
+  const dots = document.querySelectorAll('.dot');
+
+  // ✅ تفعيل النقطة الأولى عند البداية
+  dots[current].classList.add('active');
+
+  // ✅ تغيير الصورة كل 3 ثوانٍ تلقائيًا
   setInterval(() => {
     const nextImage = images[next];
 
@@ -39,7 +45,31 @@ window.onload = function () {
     // تحديث المؤشرات
     current = next;
     next = (next + 1) % images.length;
+
+    // ✅ تحديث النقاط النشطة تلقائيًا
+    dots.forEach(d => d.classList.remove('active'));
+    dots[current].classList.add('active');
   }, 3000); // مدة التبديل (3 ثوانٍ)
+
+  // ✅ تغيير الصورة يدويًا عند الضغط على النقاط
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = +dot.getAttribute('data-index');
+
+      // تحميل الصورة المحددة يدويًا
+      bg1.style.backgroundImage = `url('${images[index]}')`;
+      bg1.classList.add('visible');
+      bg2.classList.remove('visible');
+
+      // تحديث المؤشرات
+      current = index;
+      next = (index + 1) % images.length;
+
+      // تحديث النقاط النشطة
+      dots.forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+    });
+  });
 
   // 📖 زر "اقرأ المزيد / اقرأ أقل" لقسم "عن العربية"
 
@@ -73,7 +103,7 @@ window.onload = function () {
     const isPercent = counter.classList.contains('percent'); // هل هو نسبة مئوية؟
 
     let current = 0;
-    const duration = 2000; // مدة العد كاملة (2 ثانية)
+    const duration = 5000; // مدة العد كاملة (5 ثوانٍ)
     const interval = 20;   // مدة كل تحديث (20 مللي ثانية)
     const steps = duration / interval; // عدد التحديثات
     const increment = target / steps;  // مقدار الزيادة في كل تحديث

@@ -1,3 +1,6 @@
+/* 🟢 استيراد خط حديث من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
 /* شعار النافبار */
 .navbar-brand img {
   max-height: 40px; /* حجم شعار النافبار */
@@ -21,7 +24,7 @@
 
 /* خلفية ملء الشاشة */
 .background-slideshow {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -288,3 +291,121 @@
   border-radius: 8px;         /* زوايا ناعمة للخريطة */
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ظل خفيف */
 }
+
+/* اللوحة الشفافة داخل الخلفية */
+.background-panel {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.3); /* أبيض شفاف */
+  backdrop-filter: blur(6px); /* تأثير ضبابي أنيق */
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  z-index: 1;
+}
+
+/* محتوى اللوحة */
+.panel-content {
+  color: #002147;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* العنوان */
+.panel-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+/* النص الثانوي */
+.panel-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 📱 استجابة للجوال والتابلت */
+@media (max-width: 768px) {
+  .background-panel {
+    width: 80%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .panel-title {
+    font-size: 1.4rem;
+  }
+
+  .panel-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ حاوية النقاط الثلاث */
+.image-selector {
+  margin-top: 1rem;           /* مسافة علوية تفصلها عن النص */
+  display: flex;              /* عرض النقاط بجانب بعضها */
+  gap: 10px;                  /* مسافة بين كل نقطة */
+  justify-content: center;   /* توسيط النقاط داخل الحاوية */
+}
+
+/* ✅ تصميم كل نقطة */
+.dot {
+  width: 12px;                /* عرض النقطة */
+  height: 12px;               /* ارتفاع النقطة */
+  border-radius: 50%;         /* جعلها دائرية بالكامل */
+  background-color: #fff;     /* لون الخلفية (أبيض) */
+  opacity: 0.6;               /* شفافية مبدئية */
+  cursor: pointer;            /* تغيير شكل المؤشر عند التحويم */
+  transition: opacity 0.3s ease; /* انتقال ناعم عند تغيير الشفافية */
+}
+
+/* ✅ تأثير عند التحويم أو عند التفعيل */
+.dot:hover,
+.dot.active {
+  opacity: 1;                 /* شفافية كاملة */
+  background-color: #2196f3; /* لون مميز عند التفعيل (أصفر ذهبي) */
+}
+
+/* ✅ تنسيق تذييل الصفحة */
+.site-footer {
+  text-align: center;           /* توسيط النص */
+  padding: 1rem;                /* مسافة داخلية */
+  background-color: #f8f9fa;    /* لون خلفية خفيف */
+  color: #333;                  /* لون النص */
+  font-size: 0.9rem;            /* حجم الخط */
+}
+
+/* ✅ تصميم زر واتساب */
+.whatsapp-btn {
+  position: fixed;             /* تثبيت الزر في الشاشة */
+  bottom: 20px;                /* المسافة من الأسفل */
+  left: 20px;                 /* المسافة من اليمين */
+  background-color: #25D366;   /* اللون الرسمي لواتساب */
+  color: white;                /* لون الأيقونة */
+  font-size: 28px;             /* حجم الأيقونة */
+  width: 50px;                 /* عرض الزر */
+  height: 50px;                /* ارتفاع الزر */
+  border-radius: 50%;          /* جعل الزر دائري الشكل */
+  display: flex;               /* محاذاة المحتوى داخليًا */
+  align-items: center;         /* توسيط عمودي */
+  justify-content: center;     /* توسيط أفقي */
+  text-decoration: none;       /* إزالة الخط تحت الرابط */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* تأثيرات ناعمة */
+  z-index: 1000;               /* فوق كل العناصر */
+}
+
+/* ✅ تأثير عند التحويم على الزر */
+.whatsapp-btn:hover {
+  transform: scale(1.1);       /* تكبير الزر قليلاً */
+  background-color: #1ebe5d;   /* لون أخضر أغمق عند التحويم */
+}
+
