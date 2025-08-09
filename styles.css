@@ -1,5 +1,6 @@
 /* 🟢 استيراد خط حديث من Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Cairo:wght@400;700&display=swap');
 
 /* شعار النافبار */
 .navbar-brand img {
@@ -408,4 +409,66 @@
   transform: scale(1.1);       /* تكبير الزر قليلاً */
   background-color: #1ebe5d;   /* لون أخضر أغمق عند التحويم */
 }
+
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-flag {
+  width: 24px;
+  height: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+}
+
+.lang-flag:hover {
+  transform: scale(1.1);
+}
+
+/* الخط العربي للصفحات أو الأقسام العربية */
+html[lang="ar"] body,
+html[lang="ar"] .panel-content,
+html[lang="ar"] .panel-title,
+html[lang="ar"] .panel-subtitle {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* الخط الإنجليزي الافتراضي */
+html[lang="en"] body,
+html[lang="en"] .panel-content,
+html[lang="en"] .panel-title,
+html[lang="en"] .panel-subtitle {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 767px) {
+  .language-switcher {
+    position: absolute;
+    bottom: 5px;            /* مسافة صغيرة من أسفل الشريط */
+    left: 70%;              /* منتصف العرض أفقيًا */
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column; /* ترتيب عمودي */
+    gap: 6px;               /* مسافة بين الأعلام */
+    z-index: 1100;
+  }
+
+  .lang-flag {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: transform 0.2s ease;
+  }
+
+  .lang-flag:hover {
+    transform: scale(1.1);
+  }
+}
+
 

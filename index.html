@@ -40,67 +40,64 @@
     </div>
 
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="Alarabia Logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto"> <!-- menu aligned right -->
-          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#our-services">Our Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="#our-achievements">Our Achievements</a></li>
-          <li class="nav-item"><a class="nav-link" href="#partners">Our Partners</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <!-- ✅ اختيار اللغة -->
+      <div class="language-switcher position-absolute top-0 end-0 p-3">
+        <img src="https://flagcdn.com/w20/sa.png" id="lang-ar" alt="Arabic" class="lang-flag">
+        <img src="https://flagcdn.com/w20/gb.png" id="lang-en" alt="English" class="lang-flag">
       </div>
-    </div>
-  </nav>
+
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Alarabia Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto"> <!-- menu aligned right -->
+            <li class="nav-item"><a class="nav-link active" href="#hero" id="nav-home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about" id="nav-about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#our-services" id="nav-services">Our Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html" id="nav-gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#our-achievements" id="nav-achievements">Our Achievements</a></li>
+            <li class="nav-item"><a class="nav-link" href="#partners" id="nav-partners">Our Partners</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact" id="nav-contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   <!-- Page content -->
   <main style="padding-top: 100vh;"> <!-- Starts after full screen height -->
-    <!-- Our Services Section -->
-    <section id="our-services" class="py-5 bg-light">
+        <!-- Our Services Section -->
+     <section id="our-services" class="py-5 bg-light">
       <div class="container">
-        <h2 class="text-center mb-4">Our Services</h2>
+        <h2 id="services-title" class="text-center mb-4">Our Services</h2>
         <div class="row g-4">
 
-          <!-- Repeat this block for each service -->
+          <!-- خدمة 1 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
-              <!-- Service image -->
               <img src="images/Service_Expert_Trainer.jpg" alt="Expert Trainer" class="img-fluid rounded shadow-sm" />
-
-              <!-- Logo panel -->
               <div class="logo-panel">
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
-
-              <!-- Middle text panel -->
               <div class="text-panel">
-                <p>Expert Trainer</p>
+                <p id="service1-title">Expert Trainer</p>
               </div>
-
-              <!-- New extra panel -->
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service1-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
-
-              <!-- Bottom text panel -->
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service1-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
 
-          <!-- Repeat for other services -->
+          <!-- خدمة 2 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
               <img src="images/Service_training_rooms.jpg" alt="Training Rooms" class="img-fluid rounded shadow-sm" />
@@ -108,17 +105,18 @@
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
               <div class="text-panel">
-                <p>Training Rooms</p>
+                <p id="service2-title">Training Rooms</p>
               </div>
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service2-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service2-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
 
+          <!-- خدمة 3 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
               <img src="images/Service_Conference_Planning.jpg" alt="Conference Planning" class="img-fluid rounded shadow-sm" />
@@ -126,17 +124,18 @@
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
               <div class="text-panel">
-                <p>Conference Planning</p>
+                <p id="service3-title">Conference Planning</p>
               </div>
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service3-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service3-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
 
+          <!-- خدمة 4 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
               <img src="images/Service_Business_bag.jpg" alt="Business Bag" class="img-fluid rounded shadow-sm" />
@@ -144,17 +143,18 @@
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
               <div class="text-panel">
-                <p>Business Bag</p>
+                <p id="service4-title">Business Bag</p>
               </div>
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service4-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service4-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
 
+          <!-- خدمة 5 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
               <img src="images/Service_Hotel_Booking.jpg" alt="Hotel Booking" class="img-fluid rounded shadow-sm" />
@@ -162,17 +162,18 @@
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
               <div class="text-panel">
-                <p>Hotel Booking</p>
+                <p id="service5-title">Hotel Booking</p>
               </div>
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service5-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service5-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
 
+          <!-- خدمة 6 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
               <img src="images/Service_Airport_transfer.jpg" alt="Airport Transfer" class="img-fluid rounded shadow-sm" />
@@ -180,17 +181,18 @@
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
               <div class="text-panel">
-                <p>Airport Transfer</p>
+                <p id="service6-title">Airport Transfer</p>
               </div>
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service6-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service6-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
 
+          <!-- خدمة 7 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="service-card position-relative">
               <img src="images/Service_Flight_Booking.jpg" alt="Flight Booking" class="img-fluid rounded shadow-sm" />
@@ -198,13 +200,13 @@
                 <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
               </div>
               <div class="text-panel">
-                <p>Flight Booking</p>
+                <p id="service7-title">Flight Booking</p>
               </div>
               <div class="extra-panel">
-                <p>ALARABIA FOR TRAINING SERVICES</p>
+                <p id="service7-extra">ALARABIA FOR TRAINING SERVICES</p>
               </div>
               <div class="bottom-panel">
-                <p>info@alarabiats.com</p>
+                <p id="service7-contact">info@alarabiats.com</p>
               </div>
             </div>
           </div>
@@ -212,11 +214,12 @@
         </div>
       </div>
     </section>
+
     <!-- About Alarabia Section -->
     <section id="about-alarabia" class="py-5 bg-white">
       <div class="container">
         <!-- Section Title -->
-        <h2 class="text-center mb-4">About Alarabia</h2>
+        <h2 id="about-title" class="text-center mb-4">About Alarabia</h2>
 
         <div class="about-content">
           <!-- Short version of the text (always visible initially) -->
@@ -268,27 +271,34 @@
       </div>
     </section>
 
-
-  <!-- Achievements Section -->
+    <!-- Achievements Section -->
     <section id="our-achievements" class="py-5 text-center bg-white">
       <div class="container">
-        <h2 class="mb-4">Our Achievements</h2>
+        <!-- Section Title -->
+        <h2 id="achievements-heading" class="mb-4">Our Achievements</h2>
+
         <div class="row g-4">
+          <!-- Achievement 1 -->
           <div class="col-md-4">
             <h1 class="counter" data-target="11">0</h1>
-            <p>Years of Experience</p>
+            <p id="achievement-label-1">Years of Experience</p>
           </div>
+
+          <!-- Achievement 2 -->
           <div class="col-md-4">
             <h1 class="counter" data-target="848">0</h1>
-            <p>Number of courses delivered</p>
+            <p id="achievement-label-2">Number of courses delivered</p>
           </div>
+
+          <!-- Achievement 3 -->
           <div class="col-md-4">
             <h1 class="counter percent" data-target="98">0</h1>
-            <p>Customer Happiness Rate</p>
+            <p id="achievement-label-3">Customer Happiness Rate</p>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- 🤝 قسم شركاؤنا -->
     <section id="partners" class="py-5 bg-light">

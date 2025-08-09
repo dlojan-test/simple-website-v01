@@ -1,6 +1,5 @@
 window.onload = function () {
   // 🔁 تدوير الصور الخلفية تلقائيًا
-
   const images = [
     'images/Airport_transfer_bg.jpg',
     'images/Business_bag_bg.jpg',
@@ -72,57 +71,328 @@ window.onload = function () {
   });
 
   // 📖 زر "اقرأ المزيد / اقرأ أقل" لقسم "عن العربية"
+  const toggleBtn = document.getElementById("toggle-button");
+  const fullText = document.getElementById("about-full");
+  const shortText = document.getElementById("about-short");
 
-  const toggleBtn = document.getElementById("toggle-button"); // الزر
-  const fullText = document.getElementById("about-full");     // النص الكامل
-  const shortText = document.getElementById("about-short");   // النص المختصر
-
-  // التأكد من وجود العناصر قبل تنفيذ الكود
   if (toggleBtn && fullText && shortText) {
     toggleBtn.addEventListener("click", () => {
-      // إذا كان النص الكامل مخفيًا، أظهره وأخفِ المختصر
       if (fullText.style.display === "none") {
         fullText.style.display = "block";
         shortText.style.display = "none";
-        toggleBtn.textContent = "Read Less"; // تغيير نص الزر
+        toggleBtn.textContent = "Read Less";
       } else {
-        // إذا كان النص الكامل ظاهرًا، أخفِه وأظهر المختصر
         fullText.style.display = "none";
         shortText.style.display = "block";
-        toggleBtn.textContent = "Read More"; // تغيير نص الزر
+        toggleBtn.textContent = "Read More";
       }
     });
   }
 
-  // 🏆 عداد الإنجازات (بحركة متوازنة حسب حجم الرقم)
-
-  const counters = document.querySelectorAll('.counter'); // جميع عناصر العداد
+  // 🏆 عداد الإنجازات
+  const counters = document.querySelectorAll('.counter');
 
   counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target'); // الرقم النهائي
-    const isPercent = counter.classList.contains('percent'); // هل هو نسبة مئوية؟
+    const target = +counter.getAttribute('data-target');
+    const isPercent = counter.classList.contains('percent');
 
     let current = 0;
-    const duration = 5000; // مدة العد كاملة (5 ثوانٍ)
-    const interval = 20;   // مدة كل تحديث (20 مللي ثانية)
-    const steps = duration / interval; // عدد التحديثات
-    const increment = target / steps;  // مقدار الزيادة في كل تحديث
+    const duration = 5000;
+    const interval = 20;
+    const steps = duration / interval;
+    const increment = target / steps;
 
-    // دالة التحديث التدريجي
     const updateCount = () => {
       current += increment;
-
       if (current < target) {
         const displayValue = Math.floor(current);
         counter.innerText = isPercent ? `${displayValue}%` : displayValue;
         setTimeout(updateCount, interval);
       } else {
-        // تأكيد الوصول للرقم النهائي
         counter.innerText = isPercent ? `${target}%` : target;
       }
     };
 
-    // بدء العد لكل عنصر
     updateCount();
   });
+
+
+// ======= دعم تغيير اللغة للنصوص (دون تغيير الاتجاه) =======
+
+// عناصر النصوص التي سنغيرها (تأكد من وجودها في HTML)
+const panelTitle = document.querySelector('.panel-title');
+const panelSubtitle = document.querySelector('.panel-subtitle');
+
+// عناصر قائمة التنقل (تأكد من وجود id لكل عنصر في HTML)
+const navHome = document.getElementById('nav-home');
+const navAbout = document.getElementById('nav-about');
+const navServices = document.getElementById('nav-services');
+const navGallery = document.getElementById('nav-gallery');
+const navAchievements = document.getElementById('nav-achievements');
+const navPartners = document.getElementById('nav-partners');
+const navContact = document.getElementById('nav-contact');
+
+// عناصر قسم الخدمات (معرفات الخدمة من 1 إلى 7)
+const servicesTitle = document.getElementById('services-title');
+const serviceTitles = [];
+const serviceExtras = [];
+const serviceContacts = [];
+for(let i = 1; i <= 7; i++) {
+  serviceTitles.push(document.getElementById(`service${i}-title`));
+  serviceExtras.push(document.getElementById(`service${i}-extra`));
+  serviceContacts.push(document.getElementById(`service${i}-contact`));
+}
+
+// عناصر قسم About Alarabia
+const aboutTitle = document.getElementById('about-title');
+const aboutShort = document.getElementById('about-short');
+const aboutFull = document.getElementById('about-full');
+const toggleButton = document.getElementById('toggle-button');
+
+// عناصر قسم الإنجازات
+const achievementsSection = document.getElementById('our-achievements');
+const achievementsHeading = achievementsSection.querySelector('h2');
+const achievementLabels = achievementsSection.querySelectorAll('p');
+
+const translations = {
+  ar: {
+    // رأس الصفحة
+    title: 'مرحبا بكم في العربية',
+    subtitle: 'شريككم الموثوق في التدريب والفعاليات',
+    navHome: 'الرئيسية',
+    navAbout: 'من نحن',
+    navServices: 'خدماتنا',
+    navGallery: 'معرض الصور',
+    navAchievements: 'إنجازاتنا',
+    navPartners: 'شركاؤنا',
+    navContact: 'تواصل معنا',
+
+    // خدمات
+    servicesTitle: 'خدماتنا',
+    service1Title: 'مدرب خبير',
+    service1Extra: 'العربية لخدمات التدريب',
+    service1Contact: 'info@alarabiats.com',
+
+    service2Title: 'غرف تدريب',
+    service2Extra: 'العربية لخدمات التدريب',
+    service2Contact: 'info@alarabiats.com',
+
+    service3Title: 'تخطيط المؤتمرات',
+    service3Extra: 'العربية لخدمات التدريب',
+    service3Contact: 'info@alarabiats.com',
+
+    service4Title: 'حقيبة أعمال',
+    service4Extra: 'العربية لخدمات التدريب',
+    service4Contact: 'info@alarabiats.com',
+
+    service5Title: 'حجز فنادق',
+    service5Extra: 'العربية لخدمات التدريب',
+    service5Contact: 'info@alarabiats.com',
+
+    service6Title: 'نقل المطار',
+    service6Extra: 'العربية لخدمات التدريب',
+    service6Contact: 'info@alarabiats.com',
+
+    service7Title: 'حجز رحلات',
+    service7Extra: 'العربية لخدمات التدريب',
+    service7Contact: 'info@alarabiats.com',
+
+    // قسم من نحن (About Alarabia)
+    aboutTitle: 'من نحن',
+    aboutShort: 'لقد عملنا مع العديد من الشركات الرائدة والمنظمات المتنوعة. كل فعالية أُنجزت بدقة واحترافية...',
+    aboutFull: `
+      <p>
+        لقد عملنا مع العديد من الشركات الرائدة والمنظمات المتنوعة. كل فعالية أُنجزت بدقة واحترافية، مما انعكس على نتائج وتجارب عملائنا. نقوم باستمرار بتوثيق وتقييم أعمالنا داخلياً لدعم التحسين المستمر وضمان جودة الخدمة.
+      </p>
+      <p>
+        نقدم مجموعة شاملة من الخدمات، بما في ذلك:
+        <ul>
+          <li>تخطيط وتنسيق برامج تدريب متخصصة</li>
+          <li>توفير مدربين خبراء ومحترفين</li>
+          <li>الدعم اللوجستي الكامل بما في ذلك الحجز والتنظيم الميداني</li>
+          <li>خدمات الترجمة والمرافقة اللغوية</li>
+          <li>خدمات النقل من وإلى المطار</li>
+          <li>رحلات سياحية منظمة كجزء من البرنامج</li>
+          <li>خدمات إضافية مصممة حسب الطلب واحتياجات الفعالية</li>
+        </ul>
+      </p>
+      <p>
+        في العربية لخدمات التدريب والمؤتمرات، نولي اهتماماً خاصاً للحفاظ على خصوصية البرامج المقدمة وحماية معلومات عملائنا. نحن ملتزمون بالتعامل مع كافة البيانات والمحتويات بعناية واحترام، لضمان شعور شركائنا بالثقة والأمان في كل مرحلة من التعاون.
+      </p>
+      <p>
+        جميع خدماتنا تُنفذ بواسطة فريق محترف وذو خبرة، ملتزم بأعلى معايير الجودة والدقة لضمان تجربة فريدة واستثنائية لعملائنا.
+      </p>
+      <p>
+        في العربية لخدمات التدريب والمؤتمرات، لا ننظم فقط فعاليات ناجحة — بل نطمح لأن نكون شركاء نجاح حقيقيين لعملائنا، مقدمين بيئة تدريب ملهمة وتجربة سفر متكاملة وسلسة في جميع أنحاء تركيا.
+      </p>
+    `,
+    toggleReadMore: 'اقرأ المزيد',
+    toggleReadLess: 'اقرأ أقل',
+
+    // قسم الإنجازات
+    achievementsHeading: 'إنجازاتنا',
+    achievementLabels: [
+    'سنوات من الخبرة',
+    'عدد الدورات المقدمة',
+    'معدل رضا العملاء'
+  ],
+  },
+  en: {
+    // رأس الصفحة
+    title: 'Welcome to Alarabia',
+    subtitle: 'Your Trusted Partner in Professional Training and Events',
+    navHome: 'Home',
+    navAbout: 'About',
+    navServices: 'Our Services',
+    navGallery: 'Gallery',
+    navAchievements: 'Our Achievements',
+    navPartners: 'Our Partners',
+    navContact: 'Contact',
+
+    // خدمات
+    servicesTitle: 'Our Services',
+    service1Title: 'Expert Trainer',
+    service1Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service1Contact: 'info@alarabiats.com',
+
+    service2Title: 'Training Rooms',
+    service2Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service2Contact: 'info@alarabiats.com',
+
+    service3Title: 'Conference Planning',
+    service3Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service3Contact: 'info@alarabiats.com',
+
+    service4Title: 'Business Bag',
+    service4Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service4Contact: 'info@alarabiats.com',
+
+    service5Title: 'Hotel Booking',
+    service5Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service5Contact: 'info@alarabiats.com',
+
+    service6Title: 'Airport Transfer',
+    service6Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service6Contact: 'info@alarabiats.com',
+
+    service7Title: 'Flight Booking',
+    service7Extra: 'ALARABIA FOR TRAINING SERVICES',
+    service7Contact: 'info@alarabiats.com',
+
+    // قسم من نحن (About Alarabia)
+    aboutTitle: 'About Alarabia',
+    aboutShort: 'We have worked with numerous leading companies and diverse organizations. Each event we’ve handled has been delivered with precision and professionalism...',
+    aboutFull: `
+      <p>
+        We have worked with numerous leading companies and diverse organizations. Each event we’ve handled has been delivered with precision and professionalism, reflecting in the results and experiences of our clients. We consistently document and evaluate our work internally to support continuous improvement and ensure service quality.
+      </p>
+      <p>
+        We offer a comprehensive range of services, including:
+        <ul>
+          <li>Planning and coordinating specialized training programs</li>
+          <li>Providing expert and professional trainers</li>
+          <li>Complete logistical support including booking and on-ground organization</li>
+          <li>Translation services and language accompaniment</li>
+          <li>Airport pick-up and drop-off services</li>
+          <li>Organized touristic trips as part of the program</li>
+          <li>Additional services tailored to specific requests and event needs</li>
+        </ul>
+      </p>
+      <p>
+        At Alarabia for Training and Conference Services, we give special attention to maintaining the privacy of the programs we deliver and safeguarding our clients’ information. We are committed to handling all data and content with care and respect, ensuring our partners feel confident and secure at every stage of our collaboration.
+      </p>
+      <p>
+        All our services are carried out by a professional and experienced team, dedicated to the highest standards of quality and accuracy to guarantee a unique and exceptional experience for our clients.
+      </p>
+      <p>
+        At Alarabia for Training and Conference Services, we don’t just organize successful events — we aim to become true success partners for our clients, providing an inspiring training environment and a smooth, integrated travel experience throughout Turkey.
+      </p>
+    `,
+    toggleReadMore: 'Read More',
+    toggleReadLess: 'Read Less',
+
+    // قسم الإنجازات
+    achievementsHeading: 'Our Achievements',
+    achievementLabels: [
+      'Years of Experience',
+      'Number of Courses Offered',
+      'Customer Satisfaction Rate'
+    ]
+  }
+};
+
+function setLanguage(lang) {
+  // تعيين لغة المستند (HTML lang attribute)
+  document.documentElement.lang = lang;
+
+  // تحديث نصوص الرأس
+  if (panelTitle) panelTitle.textContent = translations[lang].title;
+  if (panelSubtitle) panelSubtitle.textContent = translations[lang].subtitle;
+
+  // تحديث نصوص القائمة
+  if (navHome) navHome.textContent = translations[lang].navHome;
+  if (navAbout) navAbout.textContent = translations[lang].navAbout;
+  if (navServices) navServices.textContent = translations[lang].navServices;
+  if (navGallery) navGallery.textContent = translations[lang].navGallery;
+  if (navAchievements) navAchievements.textContent = translations[lang].navAchievements;
+  if (navPartners) navPartners.textContent = translations[lang].navPartners;
+  if (navContact) navContact.textContent = translations[lang].navContact;
+
+  // تحديث عنوان قسم الخدمات
+  if (servicesTitle) servicesTitle.textContent = translations[lang].servicesTitle;
+
+  // تحديث نصوص الخدمات 1 إلى 7
+  for (let i = 0; i < 7; i++) {
+    if (serviceTitles[i]) serviceTitles[i].textContent = translations[lang][`service${i + 1}Title`];
+    if (serviceExtras[i]) serviceExtras[i].textContent = translations[lang][`service${i + 1}Extra`];
+    if (serviceContacts[i]) serviceContacts[i].textContent = translations[lang][`service${i + 1}Contact`];
+  }
+
+  // تحديث قسم من نحن (About Alarabia)
+  if (aboutTitle) aboutTitle.textContent = translations[lang].aboutTitle;
+  if (aboutShort) aboutShort.textContent = translations[lang].aboutShort;
+  if (aboutFull) aboutFull.innerHTML = translations[lang].aboutFull;
+  if (aboutFull) {
+    aboutFull.innerHTML = translations[lang].aboutFull;
+    aboutFull.dir = (lang === 'ar') ? 'rtl' : 'ltr'; // ✅ تغيير الاتجاه
+  }
+  if (toggleButton) {
+    toggleButton.textContent = translations[lang].toggleReadMore;
+    toggleButton.addEventListener('click', () => {
+      aboutFull.innerHTML = translations[lang].aboutFull;
+      aboutFull.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+      toggleButton.textContent = translations[lang].toggleReadLess;
+    });
+  }
+
+    // قسم الإنجازات
+  if (achievementsHeading) achievementsHeading.textContent = translations[lang].achievementsHeading;
+
+  if (achievementLabels.length === 3) {
+    achievementLabels.forEach((label, index) => {
+      label.textContent = translations[lang].achievementLabels[index];
+    });
+  }
+
+  // تغيير اتجاه القسم بالكامل
+  if (achievementsSection) {
+    achievementsSection.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  }
+
+
+
+}
+
+// ربط أزرار تغيير اللغة
+const btnAr = document.getElementById('lang-ar');
+const btnEn = document.getElementById('lang-en');
+
+if (btnAr) btnAr.addEventListener('click', () => setLanguage('ar'));
+if (btnEn) btnEn.addEventListener('click', () => setLanguage('en'));
+
+
+// تعيين اللغة الافتراضية عند تحميل الصفحة (يمكن تغيرها إلى 'ar' حسب رغبتك)
+setLanguage('en');
+
+
 };
