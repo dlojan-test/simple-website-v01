@@ -154,6 +154,16 @@ const achievementsSection = document.getElementById('our-achievements');
 const achievementsHeading = achievementsSection.querySelector('h2');
 const achievementLabels = achievementsSection.querySelectorAll('p');
 
+// عناصر قسم الشركاء
+// قسم الشركاء
+const partnersSection = document.getElementById('partners');
+const partnersHeading = document.getElementById('partners-heading');
+const partnersDescription = document.getElementById('partners-description');
+
+// عناصر قسم الاتصال
+//const contactHeading = document.getElementById('contact-Heading');
+
+
 const translations = {
   ar: {
     // رأس الصفحة
@@ -236,7 +246,16 @@ const translations = {
     'عدد الدورات المقدمة',
     'معدل رضا العملاء'
   ],
+
+    // قسم الشركاء
+    partnersHeading: 'شركاؤنا',
+    partnersDescription: 'ثقتهم فخر لنا — شركاؤنا من بين المؤسسات الرائدة في العالم.',
   },
+
+  // قسم الاتصال
+    contactLocationLabel: 'الموقع',
+    contactHeading: 'تواصل معنا الآن!',
+
   en: {
     // رأس الصفحة
     title: 'Welcome to Alarabia',
@@ -317,7 +336,15 @@ const translations = {
       'Years of Experience',
       'Number of Courses Offered',
       'Customer Satisfaction Rate'
-    ]
+    ],
+
+    // قسم الشركاء
+    partnersHeading: 'Our Partners',
+    partnersDescription: 'Their trust is our pride — our partners are among the world’s leading institutions.', 
+
+  // قسم الاتصال  
+    contactLocationLabel: 'Location',
+    contactHeading: 'Get In Touch With Us Now!',
   }
 };
 
@@ -379,8 +406,17 @@ function setLanguage(lang) {
     achievementsSection.dir = (lang === 'ar') ? 'rtl' : 'ltr';
   }
 
+  // قسم الشركاء
+  // تحديث نصوص قسم الشركاء
+  if (partnersHeading) partnersHeading.textContent = translations[lang].partnersHeading;
+  if (partnersDescription) partnersDescription.textContent = translations[lang].partnersDescription;
+  if (partnersSection) partnersSection.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
+  // قسم الاتصال
+  //if (contactHeading) contactHeading.textContent = translations[lang].contactHeading;
 
+  //console.log('Selected language:', lang);
+  //console.log(translations[lang].contactHeading); // هل النص موجود؟
 }
 
 // ربط أزرار تغيير اللغة
