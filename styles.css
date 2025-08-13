@@ -95,7 +95,7 @@
   display: flex;
   justify-content: center; /* توسيط الشعار أفقيًا */
   align-items: flex-start; /* الشعار في الأعلى */
-  padding-top: 2px; /* مسافة من الأعلى */
+  padding-top: 15px; /* مسافة من الأعلى */
 }
 
 /* الشعار داخل لوحة الشعار */
