@@ -523,4 +523,62 @@ With Alarabia, enjoy a warm welcome and reliable service from your very first st
       }
     });
   });
+
+  // === PARTNER LIGHTBOX LOGIC ===
+  const partnerImages = Array.from(document.querySelectorAll('#partners .partner-logo'));
+  const partnerLightbox = document.getElementById('partner-lightbox');
+  const partnerLightboxImg = document.getElementById('partner-lightbox-img');
+  const partnerLightboxCaption = document.getElementById('partner-lightbox-caption');
+  const partnerCloseBtn = document.getElementById('partner-lightbox-close');
+  const partnerPrevBtn = document.getElementById('partner-lightbox-prev');
+  const partnerNextBtn = document.getElementById('partner-lightbox-next');
+
+  let partnerCurrentIndex = 0;
+
+  partnerImages.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      partnerCurrentIndex = i;
+      openPartnerLightbox();
+    });
+  });
+
+  function openPartnerLightbox() {
+    partnerLightbox.style.display = 'flex';
+    updatePartnerLightbox();
+  }
+
+  function closePartnerLightbox() {
+    partnerLightbox.style.display = 'none';
+  }
+
+  function updatePartnerLightbox() {
+    partnerLightboxImg.src = partnerImages[partnerCurrentIndex].src;
+    partnerLightboxCaption.textContent = `Partner ${partnerCurrentIndex + 1} of ${partnerImages.length}`;
+  }
+
+  function showPartnerPrev() {
+    partnerCurrentIndex = (partnerCurrentIndex - 1 + partnerImages.length) % partnerImages.length;
+    updatePartnerLightbox();
+  }
+
+  function showPartnerNext() {
+    partnerCurrentIndex = (partnerCurrentIndex + 1) % partnerImages.length;
+    updatePartnerLightbox();
+  }
+
+  partnerCloseBtn.addEventListener('click', closePartnerLightbox);
+  partnerPrevBtn.addEventListener('click', showPartnerPrev);
+  partnerNextBtn.addEventListener('click', showPartnerNext);
+
+  partnerLightbox.addEventListener('click', (e) => {
+    if (e.target === partnerLightbox) closePartnerLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (partnerLightbox.style.display === 'flex') {
+      if (e.key === 'Escape') closePartnerLightbox();
+      if (e.key === 'ArrowLeft') showPartnerPrev();
+      if (e.key === 'ArrowRight') showPartnerNext();
+    }
+  });
 };
