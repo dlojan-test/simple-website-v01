@@ -24,7 +24,7 @@
       <div class="bg-image" id="bg2"></div>
 
       <!-- ✅ لوحة شفافة في الخلفية -->
-      <div class="background-panel">
+  <div id="background-panel" class="background-panel">
         <div class="panel-content">
           <p class="panel-title">Welcome to Alarabia</p>
           <p class="panel-subtitle">Your Trusted Partner in Professional Training and Events</p>
@@ -57,9 +57,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Language flags for mobile menu -->
+          <div class="d-lg-none d-flex justify-content-center align-items-center mb-2">
+            <img src="https://flagcdn.com/w20/sa.png" id="lang-ar-mobile" alt="Arabic" class="lang-flag me-2">
+            <img src="https://flagcdn.com/w20/gb.png" id="lang-en-mobile" alt="English" class="lang-flag">
+          </div>
           <ul class="navbar-nav ms-auto"> <!-- menu aligned right -->
-            <li class="nav-item"><a class="nav-link active" href="#hero" id="nav-home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about" id="nav-about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#background-panel" id="nav-home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about-alarabia" id="nav-about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#our-services" id="nav-services">Our Services</a></li>
             <li class="nav-item"><a class="nav-link" href="gallery.html" id="nav-gallery">Gallery</a></li>
             <li class="nav-item"><a class="nav-link" href="#our-achievements" id="nav-achievements">Our Achievements</a></li>
@@ -87,7 +92,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service1-title">Expert Trainer</p>
+                  <p id="service1-title">Providing Best Lectures</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service1-extra">🌐www.alarabiats.com</p>
@@ -108,7 +113,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service2-title">Training Rooms</p>
+                  <p id="service2-title">Comfortable Training Rooms</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service2-extra">🌐www.alarabiats.com</p>
@@ -129,7 +134,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service3-title">Conference Planning</p>
+                  <p id="service3-title">Conference Services</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service3-extra">🌐www.alarabiats.com</p>
@@ -150,7 +155,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service4-title">Business Bag</p>
+                  <p id="service4-title">Training Kits</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service4-extra">🌐www.alarabiats.com</p>
@@ -171,7 +176,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service5-title">Hotel Booking</p>
+                  <p id="service5-title">Hotel Bookings</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service5-extra">🌐www.alarabiats.com</p>
@@ -192,7 +197,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service6-title">Airport Transfer</p>
+                  <p id="service6-title">Airport Transfers</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service6-extra">🌐www.alarabiats.com</p>
@@ -214,7 +219,7 @@
                   <img src="images/logo_line_services.png" alt="Logo" class="overlay-logo" />
                 </div>
                 <div class="text-panel">
-                  <p id="service7-title">Flight Booking</p>
+                  <p id="service7-title">Flight Bookings</p>
                 </div>
                 <div class="extra-panel">
                   <p id="service7-extra">🌐www.alarabiats.com</p>
@@ -327,22 +332,12 @@
         </p>
 
         <!-- ✅ عرض الشعارات بطريقة متجاوبة -->
-        <div class="row text-center align-items-center">
-          <div class="col-12 col-md-2 offset-md-1 mb-4">
-            <img src="partners/partner1.png" alt="Partner 1" class="img-fluid grayscale">
-          </div>
-          <div class="col-12 col-md-2 mb-4">
-            <img src="partners/partner2.png" alt="Partner 2" class="img-fluid grayscale">
-          </div>
-          <div class="col-12 col-md-2 mb-4">
-            <img src="partners/partner3.png" alt="Partner 3" class="img-fluid grayscale">
-          </div>
-          <div class="col-12 col-md-2 mb-4">
-            <img src="partners/partner4.png" alt="Partner 4" class="img-fluid grayscale">
-          </div>
-          <div class="col-12 col-md-2 mb-4">
-            <img src="partners/partner5.png" alt="Partner 5" class="img-fluid grayscale">
-          </div>
+        <div class="partners-row justify-content-center align-items-center">
+          <img src="partners/partner1.png" alt="Partner 1" class="partner-logo grayscale">
+          <img src="partners/partner2.png" alt="Partner 2" class="partner-logo grayscale">
+          <img src="partners/partner3.png" alt="Partner 3" class="partner-logo grayscale">
+          <img src="partners/partner4.png" alt="Partner 4" class="partner-logo grayscale">
+          <img src="partners/partner5.png" alt="Partner 5" class="partner-logo grayscale">
         </div>
       </div>
     </section>

@@ -122,25 +122,25 @@ window.onload = function () {
       navPartners: 'شركاؤنا',
       navContact: 'تواصل معنا',
       servicesTitle: 'خدماتنا',
-      service1Title: 'مدرب خبير',
+      service1Title: 'افضل المدربين بكافة القطاعات التدريبية',
       service1Extra: '🌐www.alarabiats.com',
       service1Contact: '✉️info@alarabiats.com',
-      service2Title: 'غرف تدريب',
+      service2Title: 'لدينا افضل القاعات التدريبيةالمميزة',
       service2Extra: '🌐www.alarabiats.com',
       service2Contact: '✉️info@alarabiats.com',
-      service3Title: 'خدمة المؤتمرات',
+      service3Title: 'تنظيم المؤتمرات',
       service3Extra: '🌐www.alarabiats.com',
       service3Contact: '✉️info@alarabiats.com',
-      service4Title: 'حقائب تدريبية',
+      service4Title: 'حقائب تدريبية للمتدربين',
       service4Extra: '🌐www.alarabiats.com',
       service4Contact: '✉️info@alarabiats.com',
-      service5Title: 'حجز فنادق',
+      service5Title: 'حجز الفنادق بأفضل الأسعار',
       service5Extra: '🌐www.alarabiats.com',
       service5Contact: '✉️info@alarabiats.com',
-      service6Title: 'نقل المطار',
+      service6Title: 'الاستقبال و التوديع بالمطار',
       service6Extra: '🌐www.alarabiats.com',
       service6Contact: '✉️info@alarabiats.com',
-      service7Title: 'حجز رحلات',
+      service7Title: 'حجز طيران',
       service7Extra: '🌐www.alarabiats.com',
       service7Contact: '✉️info@alarabiats.com',
       aboutTitle: 'من نحن',
@@ -182,28 +182,28 @@ window.onload = function () {
       partnersHeading: 'شركاؤنا',
       partnersDescription: 'ثقتهم فخر لنا — شركاؤنا من بين المؤسسات الرائدة في العالم.',
       serviceDescriptions: {
-        expertTrainer: `مدرب خبير
+        expertTrainer: `افضل المدربين بكافة القطاعات التدريبية
 
 في العربية لخدمات التدريب والمؤتمرات، يقدم مدربونا الخبراء سنوات من الخبرة والمعرفة العميقة في كل جلسة تدريبية. نختار بعناية محترفين هم رواد في مجالاتهم لضمان أن يكون تدريبكم مؤثراً وملائماً.
 
 يستخدم مدربونا أساليب حديثة وتقنيات تفاعلية لتحفيز المشاركين وتعظيم نتائج التعلم.
 
 مع العربية، تستفيد من تدريب عالي الجودة يقدمه خبراء شغوفون ملتزمون بنجاحك.`,
-        trainingRooms: `غرف تدريب
+        trainingRooms: `لدينا افضل القاعات التدريبية المميزة
 
 توفر العربية لخدمات التدريب والمؤتمرات غرف تدريب مجهزة بالكامل مصممة للراحة والإنتاجية. تتميز قاعاتنا بتقنيات حديثة وتصاميم مرنة وأجواء احترافية تدعم جميع أنواع الدورات وورش العمل.
 
 نتولى جميع الجوانب اللوجستية من التجهيز إلى الدعم الفني، لتتمكن من التركيز على برنامجك.
 
 مع العربية، استمتع بتجربة تدريب سلسة في أماكن مصممة خصيصاً لاحتياجاتك.`,
-        conferenceService: `خدمة المؤتمرات
+        conferenceService: `خدمات تنظيم المؤتمرات
 
 تتخصص العربية لخدمات التدريب والمؤتمرات في تنظيم المؤتمرات الاحترافية بمختلف الأحجام. من اختيار المكان والترتيبات اللوجستية إلى تنسيق المتحدثين والإدارة الميدانية، يضمن فريقنا تنفيذ كل التفاصيل بدقة.
 
 نقدم حلولاً متكاملة تشمل التسجيل، الدعم الفني، وخدمات الضيافة.
 
 مع العربية، يُقام مؤتمرك بسلاسة ويترك أثراً إيجابياً لدى جميع الحضور.`,
-        trainingKits: `حقائب تدريبية
+        trainingKits: `حقائب تدريبية للمتدربين
 
 في العربية لخدمات التدريب والمؤتمرات، نقدم حقائب تدريبية شاملة تتضمن جميع المواد الأساسية لجلساتك. يتم تخصيص كل حقيبة حسب برنامجك وقد تشمل كتيبات عمل، أدوات مكتبية، موارد رقمية، ومنتجات تحمل شعارك.
 
@@ -215,21 +215,21 @@ window.onload = function () {
 فريقنا اللطيف يستقبلك في المطار ويتولى جميع الترتيبات اللوجستية، لتتمكن من التركيز على فعاليتك دون أي توتر.
 
 مع العربية، استمتع بتجربة سفر خالية من المتاعب، حيث يحظى كل ضيف برعاية واهتمام من لحظة الوصول وحتى المغادرة.`,
-        flightBooking: `حجز رحلات
+        flightBooking: `حجز طيران
 
 في العربية لخدمات التدريب والمؤتمرات، نجعل رحلتك سلسة من البداية إلى النهاية. خدماتنا الاحترافية لحجز الرحلات تضمن ترتيبات سفر مريحة وفي الوقت المناسب لفعاليتك أو تدريبك.
 
 فريقنا اللطيف يتولى جميع الترتيبات اللوجستية، لتتمكن من التركيز على فعاليتك دون أي توتر.
 
 مع العربية، استمتع بتجربة سفر خالية من المتاعب، حيث يحظى كل ضيف برعاية واهتمام من الحجز وحتى الوصول.`,
-        hotelBooking: `حجز فنادق
+        hotelBooking: `حجز الفنادق بأفضل الأسعار
 
 في العربية لخدمات التدريب والمؤتمرات، نقدم خدمة حجز الفنادق بسلاسة واحترافية، سواء كنت تفضل الفنادق الفاخرة أو الخيارات الاقتصادية. شراكاتنا القوية في جميع أنحاء تركيا تتيح لنا تأمين أفضل أماكن الإقامة بأفضل الأسعار.
 
 فريقنا يتولى جميع التفاصيل — من اختيار الغرف والحجوزات الجماعية إلى تسجيل الوصول المبكر أو المغادرة المتأخرة وتلبية الطلبات الخاصة — كل ذلك بما يتناسب مع موقع برنامجك وجدوله الزمني.
 
 مع العربية، استمتع بإقامة خالية من المتاعب تدعم نجاح تدريبك أو مؤتمرك، مع دعم موثوق واهتمام دقيق بكل التفاصيل.`,
-        airportPickup: `استقبال المطار
+        airportPickup: `الاستقبال و التوديع بالمطار
 
 في العربية لخدمات التدريب والمؤتمرات، نقدم خدمة استقبال احترافية في المطار لضمان بداية مريحة لرحلتك. فريقنا ينتظرك عند الوصول، يساعدك في الأمتعة، ويوفر لك وسيلة نقل آمنة وسريعة إلى الفندق أو مكان التدريب.
 
@@ -249,22 +249,22 @@ window.onload = function () {
       navPartners: 'Our Partners',
       navContact: 'Contact',
       servicesTitle: 'Our Services',
-      service1Title: 'Expert Trainer',
+      service1Title: 'Providing Best Lectures',
       service1Extra: '🌐www.alarabiats.com',
       service1Contact: '✉️info@alarabiats.com',
-      service2Title: 'Training Rooms',
+      service2Title: 'Comfortable Training Rooms',
       service2Extra: '🌐www.alarabiats.com',
       service2Contact: '✉️info@alarabiats.com',
-      service3Title: 'Conference Service',
+      service3Title: 'Conference Services',
       service3Extra: '🌐www.alarabiats.com',
       service3Contact: '✉️info@alarabiats.com',
       service4Title: 'Training Kits',
       service4Extra: '🌐www.alarabiats.com',
       service4Contact: '✉️info@alarabiats.com',
-      service5Title: 'Hotel Booking',
+      service5Title: 'Hotel Bookings',
       service5Extra: '🌐www.alarabiats.com',
       service5Contact: '✉️info@alarabiats.com',
-      service6Title: 'Airport Transfer',
+      service6Title: 'Airport Transfers',
       service6Extra: '🌐www.alarabiats.com',
       service6Contact: '✉️info@alarabiats.com',
       service7Title: 'Flight Booking',
@@ -472,10 +472,10 @@ With Alarabia, enjoy a warm welcome and reliable service from your very first st
     }
   }
 
-  // Language switcher buttons
+
+  // Language switcher buttons (desktop)
   const btnAr = document.getElementById('lang-ar');
   const btnEn = document.getElementById('lang-en');
-
   if (btnAr) btnAr.addEventListener('click', () => {
     localStorage.setItem('alarabiaLang', 'ar');
     setLanguage('ar');
@@ -485,7 +485,42 @@ With Alarabia, enjoy a warm welcome and reliable service from your very first st
     setLanguage('en');
   });
 
+  // Language switcher buttons (mobile)
+  const btnArMobile = document.getElementById('lang-ar-mobile');
+  const btnEnMobile = document.getElementById('lang-en-mobile');
+  if (btnArMobile) btnArMobile.addEventListener('click', () => {
+    localStorage.setItem('alarabiaLang', 'ar');
+    setLanguage('ar');
+    // Close navbar after switching language
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+      bsCollapse.hide();
+    }
+  });
+  if (btnEnMobile) btnEnMobile.addEventListener('click', () => {
+    localStorage.setItem('alarabiaLang', 'en');
+    setLanguage('en');
+    // Close navbar after switching language
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+      var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+      bsCollapse.hide();
+    }
+  });
+
   // On load, use saved language or default to English
   const savedLang = localStorage.getItem('alarabiaLang') || 'en';
   setLanguage(savedLang);
+
+  // Close navbar on mobile when any menu link is clicked
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        var bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+        bsCollapse.hide();
+      }
+    });
+  });
 };
