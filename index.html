@@ -412,7 +412,16 @@
     <!-- ✅ تذييل الصفحة (Footer) -->
     <footer class="site-footer">
       <p>&copy; 17-08-2025 Alarabia. جميع الحقوق محفوظة.</p>
+      <p>Visitor Count: <span id="visitor-count">...</span></p>
     </footer>
+    <script>
+      // Visitor counter using countapi
+      fetch('https://api.countapi.xyz/hit/alarabia-training.com/visits')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('visitor-count').textContent = data.value;
+        });
+    </script>
 
     <!-- ✅ زر واتساب للتواصل -->
     <a href="https://wa.me/905353546784?text=Hello%20Alarabia%20Team!%20I%E2%80%99m%20interested%20in%20your%20training%20services."

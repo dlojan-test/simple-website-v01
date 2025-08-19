@@ -3,9 +3,15 @@ window.onload = function () {
   const images = [
     'images/Airport_transfer_bg.jpg',
     'images/Business_bag_bg.jpg',
-    'images/Training_rooms_bg.jpg'
+    'images/Training_rooms_bg.jpg',
+    'images/Training_rooms_bg.jpg',
+    'images/Training_Rooms_2_bg.jpg',
+    'images/Conference_Services_bg.jpg',
+    'images/Hotel_Service_bg.jpg',
+    'images/Expert_Trainer_bg.jpg',
+    'images/Conference_Service_2_bg.jpg',
+    'images/Hotel_Services_2_bg.jpg'
   ];
-
   let current = 0;
   let next = 1;
 
