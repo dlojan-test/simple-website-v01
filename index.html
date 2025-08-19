@@ -411,14 +411,16 @@
 
     <!-- ✅ تذييل الصفحة (Footer) -->
     <footer class="site-footer">
-      <p>&copy; 19-08-2025 Alarabia. جميع الحقوق محفوظة.</p>
-      <p>Visitor Count: <span id="visitor-count">...</span></p>
+      <p>&copy; 12-2025 Alarabia. جميع الحقوق محفوظة.</p>
+      <p>Visitor Count:<br>
+        <img src="https://hitwebcounter.com/counter/counter.php?page=1234567&style=0006&nbdigits=5&type=page&initCount=0" title="Web Counter" alt="web counter" border="0" />
+      </p>
     </footer>
     <script>
       // Visitor counter using countapi (demo key for testing)
       fetch('https://api.countapi.xyz/hit/demo/visits')
         .then(res => res.json())
-        .then(data => {
+        .then data => {
           document.getElementById('visitor-count').textContent = data.value;
         });
     </script>
