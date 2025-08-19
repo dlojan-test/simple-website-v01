@@ -415,8 +415,8 @@
       <p>Visitor Count: <span id="visitor-count">...</span></p>
     </footer>
     <script>
-      // Visitor counter using countapi (GitHub Pages key)
-      fetch('https://api.countapi.xyz/hit/dlojan-test.github.io/simple-website-v01/visits')
+      // Visitor counter using countapi (demo key for testing)
+      fetch('https://api.countapi.xyz/hit/demo/visits')
         .then(res => res.json())
         .then(data => {
           document.getElementById('visitor-count').textContent = data.value;
