@@ -405,20 +405,24 @@
 
 /* ✅ تصميم كل نقطة */
 .dot {
-  width: 12px;                /* عرض النقطة */
-  height: 12px;               /* ارتفاع النقطة */
+  width: 18px;                /* عرض النقطة */
+  height: 18px;               /* ارتفاع النقطة */
   border-radius: 50%;         /* جعلها دائرية بالكامل */
   background-color: #fff;     /* لون الخلفية (أبيض) */
   opacity: 0.6;               /* شفافية مبدئية */
   cursor: pointer;            /* تغيير شكل المؤشر عند التحويم */
-  transition: opacity 0.3s ease; /* انتقال ناعم عند تغيير الشفافية */
+  border: 2px solid #fff;     /* إطار أبيض حول النقطة */
+  transition: opacity 0.3s, transform 0.2s;
+  z-index: 10;
 }
 
 /* ✅ تأثير عند التحويم أو عند التفعيل */
 .dot:hover,
 .dot.active {
   opacity: 1;                 /* شفافية كاملة */
-  background-color: #2196f3; /* لون مميز عند التفعيل (أصفر ذهبي) */
+  transform: scale(1.2);
+  background-color: #2196f3; /* لون أزرق عند التفعيل */
+  border-color: #2196f3;
 }
 
 /* ✅ تنسيق تذييل الصفحة */

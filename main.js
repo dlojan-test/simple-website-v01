@@ -4,13 +4,9 @@ window.onload = function () {
     'images/Airport_transfer_bg.jpg',
     'images/Business_bag_bg.jpg',
     'images/Training_rooms_bg.jpg',
-    'images/Training_rooms_bg.jpg',
     'images/Training_Rooms_2_bg.jpg',
-    'images/Conference_Services_bg.jpg',
-    'images/Hotel_Service_bg.jpg',
     'images/Expert_Trainer_bg.jpg',
-    'images/Conference_Service_2_bg.jpg',
-    'images/Hotel_Services_2_bg.jpg'
+    'images/Conference_Service_2_bg.jpg'
   ];
   let current = 0;
   let next = 1;
@@ -26,7 +22,7 @@ window.onload = function () {
     if (dots.length) {
       dots[current].classList.add('active');
 
-      setInterval(() => {
+      let intervalId = setInterval(() => {
         const nextImage = images[next];
         bg2.style.backgroundImage = `url('${nextImage}')`;
         bg2.classList.add('visible');
@@ -52,6 +48,7 @@ window.onload = function () {
           next = (index + 1) % images.length;
           dots.forEach(d => d.classList.remove('active'));
           dot.classList.add('active');
+          clearInterval(intervalId); // Stop auto-rotation when a dot is clicked
         });
       });
     }
