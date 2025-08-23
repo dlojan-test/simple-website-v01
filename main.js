@@ -1,12 +1,12 @@
 window.onload = function () {
   // 🔁 Background image rotation (if present)
   const images = [
+    'images/Training_Rooms_2_bg.jpg',
+    'images/Conference_Service_2_bg.jpg',
+    'images/Training_rooms_bg.jpg',
     'images/Airport_transfer_bg.jpg',
     'images/Business_bag_bg.jpg',
-    'images/Training_rooms_bg.jpg',
-    'images/Training_Rooms_2_bg.jpg',
     'images/Expert_Trainer_bg.jpg',
-    'images/Conference_Service_2_bg.jpg'
   ];
   let current = 0;
   let next = 1;
