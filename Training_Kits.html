@@ -1,23 +1,34 @@
+
+<!-- Training Kits Service Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Training Kits - Alarabia</title>
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <style>
+    /* Main page layout and background */
     body, html { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #000; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; color: #eee; }
+    /* Container for image and text */
     .container { display: flex; max-width: 1000px; width: 100%; background: #121212; border-radius: 15px; box-shadow: 0 8px 25px rgba(255,255,255,0.1); overflow: hidden; min-height: 400px; color: #eee; }
+    /* Left side: service image */
     .image-side { flex: 1 1 50%; display: flex; align-items: center; justify-content: center; background-color: #000; padding: 10px; border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
     .image-side img { max-width: 100%; max-height: 100%; border-radius: 10px; object-fit: contain; box-shadow: 0 4px 12px rgba(255,255,255,0.15); }
+    /* Right side: typewriter text */
     .text-side { flex: 1 1 50%; padding: 50px 40px; display: flex; flex-direction: column; justify-content: center; background-color: transparent; font-size: 1rem; line-height: 1.6; user-select: none; position: relative; color: #eee; }
     #typed-text { white-space: pre-wrap; min-height: 180px; border-left: 3px solid #0d6efd; padding-left: 15px; font-weight: 500; color: #eee; }
+    /* Home button at bottom right */
     .back-home-btn { position: fixed; bottom: 25px; right: 25px; background-color: #0d6efd; color: white; padding: 14px 26px; border-radius: 30px; font-weight: 600; font-size: 1rem; box-shadow: 0 5px 16px rgba(13,110,253,0.6); text-decoration: none; transition: background-color 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; gap: 10px; user-select: none; z-index: 1000; }
     .back-home-btn:hover { background-color: #084298; box-shadow: 0 7px 20px rgba(8,66,152,0.8); }
     .back-home-btn i { font-size: 1.3rem; }
+    /* WhatsApp button at bottom left */
     .whatsapp-btn { position: fixed; bottom: 25px; left: 25px; background-color: #25D366; color: white; padding: 14px 18px; border-radius: 50%; font-size: 1.5rem; box-shadow: 0 5px 16px rgba(0,0,0,0.4); text-decoration: none; z-index: 1001; display: flex; align-items: center; justify-content: center; }
     .whatsapp-btn:hover { background-color: #1ebe5d; }
+    /* Language switcher flags */
     .language-switcher {
       position: absolute;
       top: 15px;
@@ -37,6 +48,7 @@
     .lang-flag:hover {
       transform: scale(1.1);
     }
+    /* Responsive adjustments for mobile */
     @media (max-width: 768px) {
       .container { flex-direction: column; min-height: auto; }
       .image-side, .text-side { flex: 1 1 100%; border-radius: 0; }
@@ -47,27 +59,34 @@
 </head>
 <body data-service="trainingKits">
 
+  <!-- Language switcher for Arabic/English -->
   <div class="language-switcher">
     <img src="https://flagcdn.com/w20/sa.png" id="lang-ar" alt="Arabic" class="lang-flag">
     <img src="https://flagcdn.com/w20/gb.png" id="lang-en" alt="English" class="lang-flag">
   </div>
 
+  <!-- Main content: image and typewriter text -->
   <div class="container" role="main" aria-label="Training Kits detailed description with image">
     <div class="image-side" aria-label="Training Kits image">
       <img src="images/Services_Images/Service_Business_bag.jpg" alt="Training Kits" />
     </div>
     <div class="text-side">
+      <!-- Typewriter effect text will appear here -->
       <div id="typed-text" aria-live="polite" aria-atomic="true"></div>
     </div>
   </div>
 
+  <!-- Return to Home Button -->
   <a href="index.html" class="back-home-btn" aria-label="Return to Home Page">
     <i class="bi bi-house-fill"></i> Return to Home Page
   </a>
-  <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-btn" aria-label="Chat with us on WhatsApp">
+  <!-- WhatsApp Contact Button -->
+  <a href="https://wa.me/905353546784?text=Hello%20Alarabia%20Team!%20I%E2%80%99m%20interested%20in%20your%20training%20services." target="_blank" class="whatsapp-btn" aria-label="Chat with us on WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
+  <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS for language/typewriter -->
   <script src="main.js"></script>
 </body>
 </html>
