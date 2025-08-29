@@ -116,7 +116,7 @@ window.onload = function () {
   const translations = {
     ar: {
       title: 'مرحبا بكم في العربية',
-      subtitle: 'شريككم الموثوق في التدريب والفعاليات',
+      subtitle: 'شريككم الموثوق في التدريب والفعاليات في تركيا',
       navHome: 'الرئيسية',
       navAbout: 'من نحن',
       navServices: 'خدماتنا',
@@ -243,7 +243,7 @@ window.onload = function () {
     },
     en: {
       title: 'Welcome to Alarabia',
-      subtitle: 'Your Trusted Partner in Professional Training and Events',
+      subtitle: 'Your Trusted Partner in Professional Training and Events in Turkey',
       navHome: 'Home',
       navAbout: 'About',
       navServices: 'Our Services',

@@ -1,261 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>معرض صوري المذهل</title>
-<meta name="keywords" content="Alarabia, Training Services, Conference Services, Professional Trainers, Hotel Booking, Airport Pickup, Flight Booking, Business Bag, Training Rooms, Turkey Events, Corporate Training, Event Planning">
-<meta name="description" content="Alarabia provides professional training, conference services, hotel and flight booking, and more in Turkey.">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-<style>
-  /* Reset */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #121212;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    padding: 1.5rem;
-    text-align: center;
-    background: #1f1f1f;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: #f0a500;
-    box-shadow: 0 2px 10px rgba(240,165,0,0.4);
-  }
-  main {
-    flex-grow: 1;
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Image with Logo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #222;
+      min-width: 0;
+      transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    }
+    .main-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .logo-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      height: 100%;
+      background: rgba(255,255,255,0.4); /* increased transparency */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 3%;
+      z-index: 2;
+    }
+    .logo-panel img,
+    #lightbox .logo-panel img {
+      width: 100%;
+      height: auto;
+      opacity: 0.6; /* increased transparency for logo image */
+    }
+    .panel-contact {
+      margin-top: auto;
+      margin-bottom: 10%; /* move text further up for desktop/laptop */
+      width: 100%;
+      text-align: center;
+    }
+    .panel-contact p {
+      font-size: 0.9em;
+      color: #222;
+      margin: 0.5% 0;
+      font-weight: 500;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2%;
+      margin: 4% auto;
+      max-width: 96%;
+    }
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(18, 18, 18, 0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      flex-direction: row;
+    }
+    .lightbox-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80vw;
+      max-width: 900px;
+    }
+    #lightbox .image-container {
+      width: 700px;
+      height: 525px;
+      margin: 0;
+      box-shadow: 0 0 40px #f0a500aa;
+    }
+    #lightbox .logo-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      height: 100%;
+      background: rgba(255,255,255,0.4); /* increased transparency */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 15px;
+      z-index: 2;
+    }
+    #lightbox .logo-panel img,
+    #lightbox .logo-panel img {
+      width: 100%;
+      height: auto;
+      opacity: 0.6; /* increased transparency for logo image */
+    }
+    #lightbox .panel-contact {
+      margin-top: auto;
+      margin-bottom: 18px;
+      width: 100%;
+      text-align: center;
+    }
+    #lightbox .panel-contact p {
+      font-size: 0.9rem;
+      color: #222;
+      margin: 2px 0;
+      font-weight: 500;
+    }
+    .close-btn, .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: #f0a500;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1001;
+      background: none;
+      border: none;
+    }
+    .close-btn {
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+      transform: none;
+    }
+    .prev-btn {
+      left: 20px;
+    }
+    .next-btn {
+      right: 20px;
+    }
+    @media (max-width: 600px) {
   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 3%;
+    max-width: 98%;
+    margin: 2% auto;
   }
-  .gallery-item {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(240,165,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: #222;
+  .logo-panel {
+    width: 40%;
+    padding-top: 6%;
   }
-  .gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(240,165,0,0.6);
+  .panel-contact {
+    margin-bottom: 20%; /* move text up on mobile */
   }
-  .gallery-item img {
-    width: 100%;
-    height: 300px;       /* Increased height */
-    object-fit: contain;  /* Show full image without cropping */
-    display: block;
-    transition: transform 0.5s ease;
-    background: #222;
+  .panel-contact p {
+    font-size: 0.7em;
   }
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-
-  .whatsapp-btn {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    background-color: #25D366;
-    color: white;
-    padding: 14px 18px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    box-shadow: 0 5px 16px rgba(0,0,0,0.4);
-    text-decoration: none;
-    z-index: 1001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-  }
-  .whatsapp-btn:hover {
-    background-color: #1ebe5d;
-  }
-  #lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(18, 18, 18, 0.95);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    flex-direction: column;
-  }
-  #lightbox img {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 15px;
-    box-shadow: 0 0 40px #f0a500aa;
-  }
-  #lightbox .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2.5rem;
-    color: #f0a500;
-    cursor: pointer;
-    user-select: none;
-    font-weight: bold;
-  }
-  #lightbox .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    color: #f0a500;
-    cursor: pointer;
-    user-select: none;
-    padding: 0 15px;
-  }
-  #lightbox .prev-btn {
-    left: 20px;
-  }
-  #lightbox .next-btn {
-    right: 20px;
-  }
-  #lightbox .caption {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #f0a500cc;
-    max-width: 90vw;
-    text-align: center;
-    user-select: none;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    color: #555;
-  }
-</style>
+}
+  </style>
 </head>
 <body>
-
-<header>Amazing Photo Gallery</header>
-
-<main>
-  <div class="gallery-grid" id="gallery">
-    <!-- Images will be injected here -->
+  <div class="gallery-grid">
+    <!-- Gallery images will be injected here -->
   </div>
-</main>
 
-<div id="lightbox">
-  <div class="close-btn" id="lightbox-close">&times;</div>
-  <div class="nav-btn prev-btn" id="lightbox-prev">&#10094;</div>
-  <img id="lightbox-img" src="" alt="Expanded view" />
-  <div class="nav-btn next-btn" id="lightbox-next">&#10095;</div>
-  <div class="caption" id="lightbox-caption"></div>
-</div>
+  <div id="lightbox" style="display:none;">
+    <div class="close-btn" id="lightbox-close">&times;</div>
+    <div class="nav-btn prev-btn" id="lightbox-prev">&#10094;</div>
+    <div class="lightbox-content">
+      <div class="image-container">
+        <img id="lightbox-img" class="main-image" src="" alt="Expanded view" />
+        <div class="logo-panel">
+          <img src="gallery/logo_line_services.png" alt="Logo">
+          <div class="panel-contact">
+            <p>info@alarabiats.com</p>
+            <p>www.alarabiats.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-btn next-btn" id="lightbox-next">&#10095;</div>
+  </div>
 
-<footer>&copy; 2025 Alarabia. All rights reserved.</footer>
-<a href="https://wa.me/905353546784?text=Hello%20Alarabia%20Team!%20I%E2%80%99m%20interested%20in%20your%20training%20services." target="_blank" class="whatsapp-btn" style="position: fixed; bottom: 25px; left: 25px; background-color: #25D366; color: white; padding: 14px 18px; border-radius: 50%; font-size: 1.5rem; box-shadow: 0 5px 16px rgba(0,0,0,0.4); text-decoration: none; z-index: 1001; display: flex; align-items: center; justify-content: center;" aria-label="Chat with us on WhatsApp">
-  <i class="bi bi-whatsapp" style="font-size: 1.5rem;"></i>
-</a>
-<a href="index.html" class="back-home-btn" style="position: fixed; bottom: 25px; right: 25px; background-color: #0d6efd; color: white; padding: 14px 26px; border-radius: 30px; font-weight: 600; font-size: 1rem; box-shadow: 0 5px 16px rgba(13,110,253,0.6); text-decoration: none; transition: background-color 0.3s ease, box-shadow 0.3s ease; display: flex; align-items: center; gap: 10px; user-select: none; z-index: 1000;" aria-label="Return to Home Page">
-  <i class="bi bi-house-fill"></i> Return to Home Page
-</a>
-
-<script>
-  // Generate images array automatically for IMG-20250609-WA0018 to IMG-20250609-WA0047
-  const images = [];
-  const prefix = "gallery/IMG-20250609-WA";
-  const ext = ".jpg"; // adjust if needed
-
-  for (let i = 18; i <= 47; i++) {
-    // pad number to 4 digits
-    const num = i.toString().padStart(4, '0');
-    images.push(prefix + num + ext);
+  <script>
+const images = [];
+const prefix = "gallery/IMG-20250609-WA";
+const ext = ".jpg";
+for (let i = 20; i <= 47; i++) {
+  const num = i.toString().padStart(4, '0');
+  images.push(prefix + num + ext);
+}
+const galleryGrid = document.querySelector('.gallery-grid');
+images.forEach((src, i) => {
+  const container = document.createElement('div');
+  container.className = 'image-container';
+  const img = document.createElement('img');
+  img.className = 'main-image';
+  img.src = src;
+  img.alt = 'Gallery Image';
+  container.appendChild(img);
+  const logoPanel = document.createElement('div');
+  logoPanel.className = 'logo-panel';
+  const logo = document.createElement('img');
+  logo.src = 'gallery/logo_line_services.png';
+  logo.alt = 'Logo';
+  logoPanel.appendChild(logo);
+  const contact = document.createElement('div');
+  contact.className = 'panel-contact';
+  contact.innerHTML = '<p>✉️ info@alarabiats.com</p><p>🌐 www.alarabiats.com</p>';
+  logoPanel.appendChild(contact);
+  container.appendChild(logoPanel);
+  galleryGrid.appendChild(container);
+  img.addEventListener('click', () => openLightbox(i));
+});
+let currentIndex = 0;
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('lightbox-close');
+const prevBtn = document.getElementById('lightbox-prev');
+const nextBtn = document.getElementById('lightbox-next');
+function openLightbox(index) {
+  currentIndex = index;
+  lightbox.style.display = 'flex';
+  updateLightbox();
+}
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+function updateLightbox() {
+  lightboxImg.src = images[currentIndex];
+}
+function showPrev() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateLightbox();
+}
+function showNext() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateLightbox();
+}
+closeBtn.addEventListener('click', closeLightbox);
+prevBtn.addEventListener('click', showPrev);
+nextBtn.addEventListener('click', showNext);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display === 'flex') {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
   }
-
-  const gallery = document.getElementById('gallery');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const lightboxCaption = document.getElementById('lightbox-caption');
-  const closeBtn = document.getElementById('lightbox-close');
-  const prevBtn = document.getElementById('lightbox-prev');
-  const nextBtn = document.getElementById('lightbox-next');
-
-  let currentIndex = 0;
-
-  // Populate gallery grid
-  images.forEach((src, i) => {
-    const div = document.createElement('div');
-    div.classList.add('gallery-item');
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = `صورة رقم ${i + 1}`;
-    div.appendChild(img);
-    gallery.appendChild(div);
-
-    div.addEventListener('click', () => {
-      currentIndex = i;
-      openLightbox();
-    });
-  });
-
-  function openLightbox() {
-    lightbox.style.display = 'flex';
-    updateLightbox();
-  }
-
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-  }
-
-  function updateLightbox() {
-    lightboxImg.src = images[currentIndex];
-    lightboxCaption.textContent = `صورة ${currentIndex + 1} من ${images.length}`;
-  }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateLightbox();
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateLightbox();
-  }
-
-  closeBtn.addEventListener('click', closeLightbox);
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (lightbox.style.display === 'flex') {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
-    }
-  });
-</script>
-
+});
+  </script>
 </body>
 </html>
