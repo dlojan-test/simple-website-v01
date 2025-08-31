@@ -124,7 +124,7 @@ window.onload = function () {
   const translations = {
     ar: {
       title: 'مرحبا بكم في العربية',
-      subtitle: 'شريككم الموثوق في التدريب والفعاليات في تركيا',
+  subtitle: '<img src="https://flagcdn.com/w20/tr.png" alt="تركيا" style="vertical-align:middle; margin-right:6px;" /> شريككم الموثوق في التدريب والفعاليات في تركيا',
       navHome: 'الرئيسية',
       navAbout: 'من نحن',
       navServices: 'خدماتنا',
@@ -251,7 +251,7 @@ window.onload = function () {
     },
     en: {
       title: 'Welcome to Alarabia',
-      subtitle: 'Your Trusted Partner in Professional Training and Events in Turkey',
+  subtitle: 'Your Trusted Partner in Professional Training and Events in Turkey <img src="https://flagcdn.com/w20/tr.png" alt="Turkey Flag" style="vertical-align:middle; margin-left:6px;" />',
       navHome: 'Home',
       navAbout: 'About',
       navServices: 'Our Services',
@@ -414,7 +414,7 @@ With Alarabia, enjoy a warm welcome and reliable service from your very first st
 
     // Header
     if (panelTitle) panelTitle.textContent = translations[lang].title;
-    if (panelSubtitle) panelSubtitle.textContent = translations[lang].subtitle;
+  if (panelSubtitle) panelSubtitle.innerHTML = translations[lang].subtitle;
 
     // Navigation
     if (navHome) navHome.textContent = translations[lang].navHome;
