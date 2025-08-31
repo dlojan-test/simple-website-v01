@@ -97,16 +97,24 @@ window.onload = function () {
   });
 
   // ==== Typewriter Effect ====
+  let typeWriterTimeout = null;
   function typeWriter(text) {
     const typedTextElement = document.getElementById('typed-text');
     if (!typedTextElement) return;
+    // Cancel any previous animation
+    if (typeWriterTimeout) {
+      clearTimeout(typeWriterTimeout);
+      typeWriterTimeout = null;
+    }
     typedTextElement.textContent = '';
     let i = 0;
     function typing() {
       if (i < text.length) {
         typedTextElement.textContent += text.charAt(i);
         i++;
-        setTimeout(typing, 18);
+        typeWriterTimeout = setTimeout(typing, 18);
+      } else {
+        typeWriterTimeout = null;
       }
     }
     typing();
