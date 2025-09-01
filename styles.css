@@ -347,7 +347,7 @@
   transform: translate(-50%, -50%);
   width: 50%;
   height: 30%;
-  background: rgba(255, 255, 255, 0.3); /* أبيض شفاف */
+  background: rgba(0, 0, 0, 0.3); /* أسود شفاف */
   backdrop-filter: blur(6px); /* تأثير ضبابي أنيق */
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
